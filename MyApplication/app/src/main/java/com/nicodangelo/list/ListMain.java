@@ -7,6 +7,7 @@ import com.nicodangelo.pantrie.R;
 import android.app.AlertDialog;
 import android.app.ListActivity;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -14,6 +15,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.lang.Override;
 import java.lang.String;import java.util.ArrayList;
 
@@ -22,7 +26,7 @@ public class ListMain extends ListActivity
 
     ArrayList<String> list = new ArrayList<String>();
     ArrayAdapter<String> adapter;
-    ItemController itemList;
+    ItemController itemList = new ItemController();
     int curSize = 0;
 
     @Override
@@ -30,10 +34,31 @@ public class ListMain extends ListActivity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_main);
+        File temp = getCacheDir();
+        String state = "";
+        try
+        {
+            FileInputStream fs = new FileInputStream(temp);
+            int c;
+            while((c = fs.read()) != -1)
+                state = state + ((char)c);
+            fs.close();
+            if(state.equals("true"))
+            {
+                curSize = itemList.getSpot();
+                FileOutputStream fo = new FileOutputStream(temp);
+                fo.write(("false").getBytes());
+                fo.close();
+            }
 
+        }
+        catch(Exception e)
+        {
+            e.printStackTrace();
+        }
         Button btn = (Button) findViewById(R.id.btnAdd);
         adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, list);
-        itemList = new ItemController();
+
         View.OnClickListener listener = new View.OnClickListener()
         {
             @Override
@@ -67,7 +92,9 @@ public class ListMain extends ListActivity
                             @Override
                             public void onClick(DialogInterface dialog, int which)
                             {
-
+                                Intent editList = new Intent(ListMain.this, EditList.class);
+                                editList.putExtra("editList", curSize);
+                                startActivity(editList);
                             }
                         })
                         .setNeutralButton("New Item", new DialogInterface.OnClickListener() {

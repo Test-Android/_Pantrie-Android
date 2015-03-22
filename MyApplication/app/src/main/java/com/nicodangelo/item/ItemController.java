@@ -26,4 +26,8 @@ public class ItemController
     {
         return items.get(spot).toString();
     }
+    public int getSpot()
+    {
+        return curSpot;
+    }
 }

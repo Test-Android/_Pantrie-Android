@@ -7,4 +7,5 @@
     <string name="hintTxtItem">Enter an item here ...</string>
     <string name="lblBtnAdd">Add Item</string>
     <string name="txtEmpty">List is empty</string>
+    <string name="title_activity_edit_list">EditList</string>
 </resources>
