@@ -5,6 +5,8 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import com.nicodangelo.item.ItemController;
@@ -19,14 +21,18 @@ public class EditList extends ActionBarActivity
     ItemController c = new ItemController();
     int spot;
     TextView tv;
+    EditText cAmount;
+    EditText cLow;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_list);
         Intent i = getIntent();
-        spot = i.getIntExtra("editList", 0);
+        spot = c.getSpot();
         tv = (TextView) findViewById(R.id.textView);
+        cAmount = (EditText) findViewById(R.id.cAmount);
+        cLow = (EditText)findViewById(R.id.cLow);
         File temp = getCacheDir();
         String state = "";
         try
@@ -39,7 +45,17 @@ public class EditList extends ActionBarActivity
         {
             e.printStackTrace();
         }
-        tv.setText(c.getName(0));
+        tv.setText(c.getName(spot));
     }
+    public void commitChange(View view)
+    {
+        if(!cLow.getText().equals(null))
+            c.setLowAmount(spot,Integer.parseInt(cLow.getText().toString()));
+        if(!cAmount.getText().equals(null))
+            c.setAmount(spot,Integer.parseInt(cAmount.getText().toString()));
+        Intent what = new Intent(this, ListMain.class);
+        startActivity(what);
+    }
+
 
 }

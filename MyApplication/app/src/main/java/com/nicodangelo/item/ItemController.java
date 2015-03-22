@@ -5,12 +5,9 @@ import java.util.ArrayList;
 
 public class ItemController
 {
-    public static ArrayList<Item> items;
+    public static ArrayList<Item> items = new ArrayList<Item>();
     public static int curSpot;
-    public ItemController()
-    {
-        items = new ArrayList<Item>();
-    }
+    public ItemController() {}
 
     public void addItem(String s)
     {
@@ -18,9 +15,9 @@ public class ItemController
         items.add(e);
         curSpot++;
     }
-    public void setAmount(int i)
+    public void setAmount(int i, int spot)
     {
-        items.get(curSpot).setAmount(i);
+        items.get(spot).setAmount(i);
     }
     public String getName(int spot)
     {

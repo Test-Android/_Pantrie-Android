@@ -92,19 +92,23 @@ public class ListMain extends ListActivity
                             public void onClick(DialogInterface dialog, int which)
                             {
                                 Intent editList = new Intent(ListMain.this, EditList.class);
-                                editList.putExtra("editList", curSize);
+                                editList.putExtra("editList", curSize - 1);
                                 startActivity(editList);
                             }
                         })
-                        .setNeutralButton("New Item", new DialogInterface.OnClickListener() {
+                        .setNeutralButton("New Item", new DialogInterface.OnClickListener()
+                        {
                             @Override
-                            public void onClick(DialogInterface dialog, int which) {
+                            public void onClick(DialogInterface dialog, int which)
+                            {
 
                             }
                         })
-                        .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                        .setNegativeButton("Cancel", new DialogInterface.OnClickListener()
+                        {
                             @Override
-                            public void onClick(DialogInterface dialog, int which) {
+                            public void onClick(DialogInterface dialog, int which)
+                            {
 
                             }
                         });
