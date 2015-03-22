@@ -22,6 +22,8 @@ import java.lang.Override;
 import java.lang.String;
 import java.util.ArrayList;
 
+import static com.nicodangelo.pantrie.R.id.editList;
+
 public class ListMain extends ListActivity
 {
 
@@ -128,6 +130,7 @@ public class ListMain extends ListActivity
         super.onListItemClick(l, v, position, id);
     }
 
+<<<<<<< HEAD
     @Override
     public boolean onCreateOptionsMenu(Menu menu)
     {
@@ -152,4 +155,6 @@ public class ListMain extends ListActivity
 
         return super.onOptionsItemSelected(item);
     }
+=======
+>>>>>>> origin/master
 }
