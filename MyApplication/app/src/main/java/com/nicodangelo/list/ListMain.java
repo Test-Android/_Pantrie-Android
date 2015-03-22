@@ -106,6 +106,7 @@ public class ListMain extends ActionBarActivity
                     {
                         final int a = k;
                         AlertDialog.Builder ab = new AlertDialog.Builder(ListMain.this)
+                                .setTitle("Edit Pantrie?")
                                 .setPositiveButton("Edit Item", new DialogInterface.OnClickListener()
                                 {
                                     @Override
