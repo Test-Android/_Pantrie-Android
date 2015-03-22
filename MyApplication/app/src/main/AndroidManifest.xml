@@ -39,6 +39,10 @@
             android:name="com.nicodangelo.Util.Settings"
             android:label="@string/title_activity_settings" >
         </activity>
+        <activity
+            android:name="com.nicodangelo.list.ListAdapter"
+            android:label="@string/title_activity_list_adapter" >
+        </activity>
     </application>
 
 </manifest>
