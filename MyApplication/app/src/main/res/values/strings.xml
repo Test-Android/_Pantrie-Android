@@ -9,5 +9,4 @@
     <string name="txtEmpty">List is empty</string>
     <string name="title_activity_edit_list">EditList</string>
     <string name="title_activity_forgot_password">ForgotPassword</string>
-    <string name="title_activity_settings">Settings</string>
 </resources>
