@@ -4,6 +4,8 @@ package com.nicodangelo.list;
 import com.nicodangelo.Util.Settings;
 import com.nicodangelo.item.ItemController;
 import com.nicodangelo.pantrie.R;
+
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.ListActivity;
 import android.content.DialogInterface;
@@ -12,6 +14,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -27,12 +30,13 @@ import java.util.zip.Inflater;
 //import static com.nicodangelo.pantrie.R.id.editList;
 import static com.nicodangelo.pantrie.R.layout.activity_list_main;
 
-public class ListMain extends ListActivity
+public class ListMain extends Activity
 {
     ArrayList<String> list = new ArrayList<String>();
     ArrayAdapter<String> adapter;
     ItemController itemList = new ItemController();
     int curSize = 0;
+    ListView lv;
 
     @Override
     public void onCreate(Bundle savedInstanceState)
@@ -62,9 +66,7 @@ public class ListMain extends ListActivity
                 fo.write(("false").getBytes());
                 fo.close();
                 itemList.printAll();
-
             }
-
         }
         catch(Exception e)
         {
@@ -88,52 +90,49 @@ public class ListMain extends ListActivity
         };
 
         btn.setOnClickListener(listener);
-        setListAdapter(adapter);
+        lv = (ListView) findViewById(R.id.listView);
+        lv.setAdapter(adapter);
+        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                for(int k = 0; k < curSize; k++)
+                {
+                    if(k == position)
+                    {
+                        AlertDialog.Builder ab = new AlertDialog.Builder(ListMain.this)
+                                .setTitle("Options")
+                                .setMessage("What do you want to do with this item? ")
+                                .setPositiveButton("Edit Item", new DialogInterface.OnClickListener()
+                                {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which)
+                                    {
+                                        Intent editList = new Intent(ListMain.this, EditList.class);
+                                        startActivity(editList);
+                                    }
+                                })
+                                .setNeutralButton("New Item", new DialogInterface.OnClickListener()
+                                {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which)
+                                    {
+
+                                    }
+                                })
+                                .setNegativeButton("Cancel", new DialogInterface.OnClickListener()
+                                {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {} });
+                        ab.create();
+                        ab.show();
+                    }
+                }
+            }
+        });
     }
     @Override
     protected void onPause()
     {
         
     }
-    @Override
-    protected void onListItemClick(ListView l, View v, int position, long id)
-    {
-        for(int k = 0; k < curSize; k++)
-        {
-            if(k == position)
-            {
-                AlertDialog.Builder ab = new AlertDialog.Builder(this)
-                        .setTitle("Options")
-                        .setMessage("What do you want to do with this item? ")
-                        .setPositiveButton("Edit Item", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which)
-                            {
-                                Intent editList = new Intent(ListMain.this, EditList.class);
-                                startActivity(editList);
-                            }
-                        })
-                        .setNeutralButton("New Item", new DialogInterface.OnClickListener()
-                        {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which)
-                            {
-
-                            }
-                        })
-                        .setNegativeButton("Cancel", new DialogInterface.OnClickListener()
-                        {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which)
-                            {
-
-                            }
-                        });
-                ab.create();
-                ab.show();
-            }
-        }
-        super.onListItemClick(l, v, position, id);
-    }
-
 }
