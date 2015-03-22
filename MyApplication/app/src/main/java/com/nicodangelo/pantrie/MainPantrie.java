@@ -29,14 +29,14 @@ public class MainPantrie extends ActionBarActivity
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main_pantrie);
+
         ///////////////////////////////////////////////////////////////////////////////////////////
         // Enable Local Datastore, and make a Test Parse Object!
         Parse.enableLocalDatastore(this);
-        Parse.initialize(this, "pBnaKMYAdbbfRhdvcKQEWFLiKtmsXXzOZXAAGoLh", "tJpug7m4dtF6FhpaMoM9PWAxlTRAbSoAKLcdWx5J");
+        Parse.initialize(this, "jGe97HPLspW4X6OfjyP3sHGiiPNvwobOJmoD86AP", "N14XxGfjhENApWZ9LyLBVxG1z09yrZxMUrdTf5IF");
         ///////////////////////////////////////////////////////////////////////////////////////////
-
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_pantrie);
     }
 
     public void logIn(View view)

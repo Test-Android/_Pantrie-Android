@@ -2,6 +2,7 @@
 
 package com.nicodangelo.pantrie;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -9,6 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 
+import com.nicodangelo.list.ListMain;
 import com.parse.Parse;
 import com.parse.ParseUser;
 import com.parse.SignUpCallback;
@@ -29,12 +31,6 @@ public class NewLogIn extends ActionBarActivity
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
-        ///////////////////////////////////////////////////////////////////////////////////////////
-        // Enable Local Datastore, and make a Test Parse Object!
-        Parse.enableLocalDatastore(this);
-        Parse.initialize(this, "pBnaKMYAdbbfRhdvcKQEWFLiKtmsXXzOZXAAGoLh", "tJpug7m4dtF6FhpaMoM9PWAxlTRAbSoAKLcdWx5J");
-        ///////////////////////////////////////////////////////////////////////////////////////////
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_log_in);
     }
@@ -44,7 +40,7 @@ public class NewLogIn extends ActionBarActivity
         newUsernameText = (EditText) findViewById(R.id.newUsernameText);
         newEmailText = (EditText) findViewById(R.id.newEmailText);
         newPasswordText = (EditText) findViewById(R.id.newPasswordText);
-        newPasswordText = (EditText) findViewById(R.id.newPasswordText);
+        newConfirmPasswordText = (EditText) findViewById(R.id.newConfirmPasswordText);
 
         newUsername = newUsernameText.getText().toString();
         newEmail = newEmailText.getText().toString();
@@ -85,12 +81,14 @@ public class NewLogIn extends ActionBarActivity
         else
         {
             System.out.println("password don't match");
+            newUserCreated();
         }
 
     }
 
     public void newUserCreated()
     {
-
+        Intent i = new Intent(this, ListMain.class);
+        startActivity(i);
     }
 }
