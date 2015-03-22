@@ -1,6 +1,7 @@
 // @Author Jett Kaspar
 package com.nicodangelo.list;
 
+import com.nicodangelo.Util.Settings;
 import com.nicodangelo.item.ItemController;
 import com.nicodangelo.pantrie.R;
 import android.app.AlertDialog;
@@ -21,6 +22,7 @@ import java.io.FileOutputStream;
 import java.lang.Override;
 import java.lang.String;
 import java.util.ArrayList;
+import java.util.zip.Inflater;
 
 import static com.nicodangelo.pantrie.R.id.editList;
 
@@ -135,7 +137,7 @@ public class ListMain extends ListActivity
     public boolean onCreateOptionsMenu(Menu menu)
     {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R., menu);
+        getMenuInflater().inflate(R.menu.menu_edit_list, menu);
         return true;
     }
 
@@ -150,6 +152,8 @@ public class ListMain extends ListActivity
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings)
         {
+            Inflater i = new Inflater(ListMain.this, Settings.class);
+            startActivity(i);
             return true;
         }
 
