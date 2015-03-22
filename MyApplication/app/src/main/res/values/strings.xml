@@ -1,7 +1,5 @@
 <resources>
     <string name="app_name">Pantrie</string>
-
-    <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_new_log_in">NewLogIn</string>
     <string name="hintTxtItem">Enter an item here ...</string>
@@ -9,5 +7,22 @@
     <string name="txtEmpty">List is empty</string>
     <string name="title_activity_edit_list">EditList</string>
     <string name="title_activity_forgot_password">ForgotPassword</string>
+<<<<<<< HEAD
     <string name="title_activity_list_adapter">ListAdapter</string>
+=======
+    <string name="forgotPasswordInfoText">Forgot Password? No big Deal, \n \t \tReset it with Your email</string>
+    <string name="emailHintText">Email</string>
+    <string name="resetButtonText6">Reset Password!</string>
+    <string name="backFromForgotPasswordText">Back</string>
+    <string name="enterUsernameText">Username</string>
+    <string name="enterPasswordText">Password</string>
+    <string name="createNewAccountString">Create Account</string>
+    <string name="logInString">LOGIN</string>
+    <string name="forgotPasswordString">Forgot Password?</string>
+    <string name="newUsernameString">Username</string>
+    <string name="newEmailString">Email</string>
+    <string name="newPasswordString">Password</string>
+    <string name="confirmPasswordString">Confirm Password</string>
+    <string name="createAccountButtonString">Create Account</string>
+>>>>>>> origin/master
 </resources>
