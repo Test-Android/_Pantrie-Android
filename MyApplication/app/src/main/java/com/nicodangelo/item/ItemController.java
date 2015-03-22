@@ -25,6 +25,7 @@ public class ItemController
 
     public void setAmount(int i, int spot)
     {
+
         items.get(i).setAmount(spot);
     }
     public String getName(int spot)
@@ -43,4 +44,5 @@ public class ItemController
     {
         return "Item Name: " + items.get(spot).getName() + " Amount: " + items.get(spot).getAmount();
     }
+
 }
