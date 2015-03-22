@@ -24,11 +24,11 @@ import java.lang.String;
 import java.util.ArrayList;
 import java.util.zip.Inflater;
 
-import static com.nicodangelo.pantrie.R.id.editList;
+//import static com.nicodangelo.pantrie.R.id.editList;
+import static com.nicodangelo.pantrie.R.layout.activity_list_main;
 
 public class ListMain extends ListActivity
 {
-
     ArrayList<String> list = new ArrayList<String>();
     ArrayAdapter<String> adapter;
     ItemController itemList = new ItemController();
@@ -38,7 +38,7 @@ public class ListMain extends ListActivity
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_list_main);
+        setContentView(activity_list_main);
 
         File temp = getCacheDir();
         String state = "";
@@ -134,33 +134,6 @@ public class ListMain extends ListActivity
             }
         }
         super.onListItemClick(l, v, position, id);
-    }
-
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu)
-    {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_edit_list, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item)
-    {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings)
-        {
-            Inflater i = new Inflater(this, Settings.class);
-            startActivity(i);
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
     }
 
 }
