@@ -46,6 +46,7 @@ public class ListMain extends ListActivity
             fs.close();
             if(state.equals("true"))
             {
+                System.out.print(state);
                 for(int k = 0; k < itemList.getSpot(); k++)
                 {
                     list.add(itemList.getName(k));
