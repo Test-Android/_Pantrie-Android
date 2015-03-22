@@ -3,6 +3,7 @@ package com.nicodangelo.list;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -29,7 +30,7 @@ public class EditList extends ActionBarActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_list);
         Intent i = getIntent();
-        spot = c.getSpot();
+        spot = c.getSpot() - 1;
         tv = (TextView) findViewById(R.id.textView);
         cAmount = (EditText) findViewById(R.id.cAmount);
         cLow = (EditText)findViewById(R.id.cLow);
@@ -49,9 +50,9 @@ public class EditList extends ActionBarActivity
     }
     public void commitChange(View view)
     {
-        if(!cLow.getText().equals(null))
+        if(!TextUtils.isEmpty(cLow.getText()))
             c.setLowAmount(spot,Integer.parseInt(cLow.getText().toString()));
-        if(!cAmount.getText().equals(null))
+        if(!TextUtils.isEmpty(cAmount.getText()))
             c.setAmount(spot,Integer.parseInt(cAmount.getText().toString()));
         Intent what = new Intent(this, ListMain.class);
         startActivity(what);

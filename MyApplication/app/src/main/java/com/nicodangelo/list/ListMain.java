@@ -34,6 +34,7 @@ public class ListMain extends ListActivity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_main);
+
         File temp = getCacheDir();
         String state = "";
         try
@@ -45,10 +46,16 @@ public class ListMain extends ListActivity
             fs.close();
             if(state.equals("true"))
             {
+                for(int k = 0; k < itemList.getSpot(); k++)
+                {
+                    list.add(itemList.getName(k));
+                    System.out.print(itemList.getName(k));
+                }
                 curSize = itemList.getSpot();
                 FileOutputStream fo = new FileOutputStream(temp);
                 fo.write(("false").getBytes());
                 fo.close();
+
             }
 
         }
@@ -92,7 +99,6 @@ public class ListMain extends ListActivity
                             public void onClick(DialogInterface dialog, int which)
                             {
                                 Intent editList = new Intent(ListMain.this, EditList.class);
-                                editList.putExtra("editList", curSize - 1);
                                 startActivity(editList);
                             }
                         })

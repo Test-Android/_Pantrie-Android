@@ -17,7 +17,7 @@ public class ItemController
     }
     public void setAmount(int i, int spot)
     {
-        items.get(spot).setAmount(i);
+        items.get(i).setAmount(spot);
     }
     public String getName(int spot)
     {
