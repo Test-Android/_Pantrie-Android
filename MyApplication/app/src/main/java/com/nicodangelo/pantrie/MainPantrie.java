@@ -7,6 +7,7 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.EditText;
 
 import com.nicodangelo.list.ListMain;
@@ -36,17 +37,17 @@ public class MainPantrie extends ActionBarActivity
         setContentView(R.layout.activity_main_pantrie);
     }
 
-    public void launchNewLogIn()
+    public void launchNewLogIn(View view)
     {
 
     }
 
-    public void logIn()
+    public void logIn(View view)
     {
 
     }
 
-    public void goToJett()
+    public void goToJett(View view)
     {
         Intent i = new Intent(this,ListMain.class);
         startActivity(i);
