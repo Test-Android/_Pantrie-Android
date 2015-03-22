@@ -2,17 +2,26 @@
 
 package com.nicodangelo.pantrie;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.EditText;
 
+import com.nicodangelo.list.ListMain;
 import com.nicodangelo.pantrie.R;
 import com.parse.Parse;
 
 
 public class MainPantrie extends ActionBarActivity
 {
+    private static EditText usernameText;
+    private static EditText passwordText;
+
+    private static String username;
+    private static String password;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -25,5 +34,21 @@ public class MainPantrie extends ActionBarActivity
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_pantrie);
+    }
+
+    public void launchNewLogIn()
+    {
+        Intent i = new Intent(this,ListMain.class);
+        startActivity(i);
+    }
+
+    public void logIn()
+    {
+
+    }
+
+    public void goToJett()
+    {
+
     }
 }

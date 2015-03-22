@@ -32,7 +32,8 @@
         android:id="@+id/toNewAccountButton"
         android:layout_below="@+id/passwordText"
         android:layout_alignLeft="@+id/passwordText"
-        android:layout_alignStart="@+id/passwordText"/>
+        android:layout_alignStart="@+id/passwordText"
+        android:onClick="launchNewLogIn"/>
 
     <Button
         android:layout_width="wrap_content"
@@ -41,5 +42,16 @@
         android:id="@+id/logInButton"
         android:layout_alignBottom="@+id/toNewAccountButton"
         android:layout_alignRight="@+id/passwordText"
-        android:layout_alignEnd="@+id/passwordText"/>
+        android:layout_alignEnd="@+id/passwordText"
+        android:onClick="logIn"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="To Jett"
+        android:id="@+id/toJett"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:onClick="goToJett"/>
 </RelativeLayout>
