@@ -133,14 +133,16 @@ public class ListMain extends ActionBarActivity
                                             public void onClick(DialogInterface dialog, int whichButton)
                                             {
                                                 if(!TextUtils.isEmpty(one.getText().toString()))
+                                                {
                                                     itemList.setAmount(a, Integer.parseInt(one.getText().toString()));
+                                                    list.set(a,itemList.getInfo(a));
+                                                }
                                                 if(!TextUtils.isEmpty(two.getText().toString()))
                                                     itemList.setAmount(a,Integer.parseInt(two.getText().toString()));
                                                 adapter.notifyDataSetChanged();
 
                                             }
                                         });
-
                                         builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
                                             public void onClick(DialogInterface dialog, int whichButton) {
                                                 dialog.cancel();

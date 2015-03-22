@@ -29,7 +29,7 @@ public class ItemController
     }
     public String getName(int spot)
     {
-        return items.get(spot).getName();
+        return "Item Name: " + items.get(spot).getName();
     }
     public void setLowAmount(int spot, int low)
     {
@@ -38,5 +38,9 @@ public class ItemController
     public int getSpot()
     {
         return curSpot;
+    }
+    public String getInfo(int spot)
+    {
+        return "Item Name: " + items.get(spot).getName() + " Amount: " + items.get(spot).getAmount();
     }
 }
