@@ -11,6 +11,7 @@ import android.app.ListActivity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -30,7 +31,7 @@ import java.util.zip.Inflater;
 //import static com.nicodangelo.pantrie.R.id.editList;
 import static com.nicodangelo.pantrie.R.layout.activity_list_main;
 
-public class ListMain extends Activity
+public class ListMain extends ActionBarActivity
 {
     ArrayList<String> list = new ArrayList<String>();
     ArrayAdapter<String> adapter;
@@ -133,6 +134,31 @@ public class ListMain extends Activity
     @Override
     protected void onPause()
     {
-        
+        super.onPause();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu)
+    {
+        getMenuInflater().inflate(R.menu.menu_settings, menu);
+        return true;
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item)
+    {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if(id == R.id.action_settings)
+        {
+            Intent i = new Intent(this, Settings.class);
+            startActivity(i);
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 }
