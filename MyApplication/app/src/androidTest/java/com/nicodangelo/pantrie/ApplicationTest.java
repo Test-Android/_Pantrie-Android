@@ -1,5 +1,5 @@
 package com.nicodangelo.pantrie;
-
+import com.nicodangelo.*;
 import android.app.Application;
 import android.test.ApplicationTestCase;
 
