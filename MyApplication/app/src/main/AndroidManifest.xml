@@ -35,6 +35,10 @@
             android:name=".ForgotPassword"
             android:label="@string/title_activity_forgot_password" >
         </activity>
+        <activity
+            android:name="com.nicodangelo.Util.Settings"
+            android:label="@string/title_activity_settings" >
+        </activity>
     </application>
 
 </manifest>
