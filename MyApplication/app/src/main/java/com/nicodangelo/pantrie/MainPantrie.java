@@ -38,8 +38,7 @@ public class MainPantrie extends ActionBarActivity
 
     public void launchNewLogIn()
     {
-        Intent i = new Intent(this,ListMain.class);
-        startActivity(i);
+
     }
 
     public void logIn()
@@ -49,6 +48,7 @@ public class MainPantrie extends ActionBarActivity
 
     public void goToJett()
     {
-
+        Intent i = new Intent(this,ListMain.class);
+        startActivity(i);
     }
 }
