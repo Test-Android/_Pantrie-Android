@@ -130,7 +130,7 @@ public class ListMain extends ListActivity
         super.onListItemClick(l, v, position, id);
     }
 
-<<<<<<< HEAD
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu)
     {
@@ -155,6 +155,5 @@ public class ListMain extends ListActivity
 
         return super.onOptionsItemSelected(item);
     }
-=======
->>>>>>> origin/master
+
 }
