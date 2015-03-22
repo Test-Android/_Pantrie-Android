@@ -31,6 +31,10 @@
             android:name="com.nicodangelo.list.EditList"
             android:label="@string/title_activity_edit_list" >
         </activity>
+        <activity
+            android:name=".ForgotPassword"
+            android:label="@string/title_activity_forgot_password" >
+        </activity>
     </application>
 
 </manifest>

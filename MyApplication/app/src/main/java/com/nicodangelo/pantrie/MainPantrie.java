@@ -77,9 +77,9 @@ public class MainPantrie extends ActionBarActivity
         startActivity(i);
     }
 
-    public void goToJett(View view)
+    public void forgotMyPassword(View view)
     {
-        Intent i = new Intent(this,ListMain.class);
+        Intent i = new Intent(this,ForgotPassword.class);
         startActivity(i);
     }
 }
