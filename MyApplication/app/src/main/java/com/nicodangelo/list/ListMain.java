@@ -128,14 +128,12 @@ public class ListMain extends ListActivity
         super.onListItemClick(l, v, position, id);
     }
 
-<<<<<<< HEAD
-=======
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu)
     {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R., menu);
+        getMenuInflater().inflate(R.id., menu);
         return true;
     }
 
@@ -155,5 +153,4 @@ public class ListMain extends ListActivity
 
         return super.onOptionsItemSelected(item);
     }
->>>>>>> origin/master
 }
