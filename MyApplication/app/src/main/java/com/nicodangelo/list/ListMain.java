@@ -55,6 +55,7 @@ public class ListMain extends ListActivity
                 FileOutputStream fo = new FileOutputStream(temp);
                 fo.write(("false").getBytes());
                 fo.close();
+                itemList.printAll();
 
             }
 

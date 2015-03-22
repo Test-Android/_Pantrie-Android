@@ -9,6 +9,13 @@ public class ItemController
     public static int curSpot;
     public ItemController() {}
 
+    public void printAll()
+    {
+        for(int k = 0; k < curSpot; k++)
+        {
+            System.out.print(items.get(k).getName());
+        }
+    }
     public void addItem(String s)
     {
         Item e = new Item(s);
