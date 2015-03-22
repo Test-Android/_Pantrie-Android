@@ -1,6 +1,7 @@
 // @Author Jett Kaspar
 package com.nicodangelo.list;
 import com.nicodangelo.item.Item;
+import com.nicodangelo.item.ItemController;
 import com.nicodangelo.pantrie.R;
 
 import android.app.AlertDialog;
@@ -13,14 +14,15 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 
-import java.lang.Override;import java.lang.String;import java.util.ArrayList;
+import java.lang.Override;
+import java.lang.String;import java.util.ArrayList;
 
 public class ListMain extends ListActivity
 {
 
     ArrayList<String> list = new ArrayList<String>();
     ArrayAdapter<String> adapter;
-    ArrayList<Item> itemList;
+    ItemController itemList;
     int curSize = 1;
 
     @Override
@@ -31,20 +33,15 @@ public class ListMain extends ListActivity
 
         Button btn = (Button) findViewById(R.id.btnAdd);
         adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, list);
-        itemList = new ArrayList<Item>();
-        Item item = new Item("Nuts");
-        itemList.add(item);
-        list.add(itemList.get(0).toString());
-
+        itemList = new ItemController();
         View.OnClickListener listener = new View.OnClickListener()
         {
             @Override
             public void onClick(View v)
             {
                 EditText edit = (EditText) findViewById(R.id.txtItem);
-                Item im = new Item(edit.getText().toString());
-                itemList.add(im);
-                list.add(itemList.get(curSize).toString());
+                itemList.addItem(edit.getText().toString());
+                list.add(itemList.getItem(curSize).toString());
                 edit.setText("");
                 curSize++;
                 adapter.notifyDataSetChanged();
