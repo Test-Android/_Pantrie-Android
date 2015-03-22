@@ -22,8 +22,8 @@ public class MainPantrie extends ActionBarActivity
     private static EditText usernameText;
     private static EditText passwordText;
 
-    private static String username;
-    private static String password;
+    public static String username = "";
+    private static String password = "";
 
 
     @Override
@@ -41,8 +41,8 @@ public class MainPantrie extends ActionBarActivity
 
     public void logIn(View view)
     {
-        usernameText = (EditText) view.findViewById(R.id.usernameText);
-        passwordText = (EditText) view.findViewById(R.id.passwordText);
+        usernameText = (EditText) findViewById(R.id.usernameText);
+        passwordText = (EditText) findViewById(R.id.passwordText);
 
         username = usernameText.getText().toString();
         password = passwordText.getText().toString();
@@ -55,6 +55,7 @@ public class MainPantrie extends ActionBarActivity
                 {
                     // Hooray! The user is logged in.
                     System.out.println("YOU ARE LOGGED IN");
+                    LogInTheUser();
                 } else
                 {
                     // Signup failed. Look at the ParseException to see what happened.
@@ -62,6 +63,12 @@ public class MainPantrie extends ActionBarActivity
                 }
             }
         });
+    }
+
+    public void LogInTheUser()
+    {
+        Intent i = new Intent(this, ListMain.class);
+        startActivity(i);
     }
 
     public void launchNewLogIn(View view)

@@ -9,6 +9,8 @@
                 tools:context="com.nicodangelo.pantrie.NewLogIn">
 
     <EditText
+        android:hint="Username"
+
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
@@ -19,6 +21,8 @@
         android:layout_marginTop="60dp"/>
 
     <EditText
+        android:hint="Email"
+
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:inputType="textEmailAddress"
@@ -28,6 +32,8 @@
         android:layout_centerHorizontal="true"/>
 
     <EditText
+        android:hint="Password"
+
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:inputType="textPassword"
@@ -37,6 +43,8 @@
         android:layout_centerHorizontal="true"/>
 
     <EditText
+        android:hint="Confirm Password"
+
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:inputType="textPassword"

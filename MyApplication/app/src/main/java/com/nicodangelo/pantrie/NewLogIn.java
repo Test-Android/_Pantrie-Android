@@ -23,7 +23,7 @@ public class NewLogIn extends ActionBarActivity
     private static EditText newPasswordText;
     private static EditText newConfirmPasswordText;
 
-    private static String newUsername;
+    public static String newUsername;
     private static String newEmail;
     private static String newPassword;
     private static String newConfirmPassword;
