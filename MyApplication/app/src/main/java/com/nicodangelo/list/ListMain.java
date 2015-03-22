@@ -23,7 +23,7 @@ public class ListMain extends ListActivity
     ArrayList<String> list = new ArrayList<String>();
     ArrayAdapter<String> adapter;
     ItemController itemList;
-    int curSize = 1;
+    int curSize = 0;
 
     @Override
     public void onCreate(Bundle savedInstanceState)
@@ -41,7 +41,7 @@ public class ListMain extends ListActivity
             {
                 EditText edit = (EditText) findViewById(R.id.txtItem);
                 itemList.addItem(edit.getText().toString());
-                list.add(itemList.getItem(curSize).toString());
+                list.add(itemList.getItem(curSize));
                 edit.setText("");
                 curSize++;
                 adapter.notifyDataSetChanged();
