@@ -29,8 +29,6 @@ public class ConversionCalculator extends ActionBarActivity
     EditText seccondNumberText;
     Button firstChoice;
     Button seccondChoice;
-    String[] listItems1 = new String[]{"ounces"};
-    String[] listItems2 = new String[]{"grams"};
     String firstIdent;
     String seccIdent;
     Button ConvertButton;
