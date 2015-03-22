@@ -6,7 +6,46 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context="com.nicodangelo.list.EditList">
 
-    <TextView android:text="@string/hello_world" android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Large Text"
+        android:id="@+id/textView"
+        android:textSize="40dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
 
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/cAmount"
+        android:layout_marginBottom="45dp"
+        android:hint="Change Amount"
+        android:layout_above="@+id/cLow"
+        android:layout_alignRight="@+id/cLow"
+        android:layout_alignEnd="@+id/cLow"
+        android:layout_alignLeft="@+id/cLow"
+        android:layout_alignStart="@+id/cLow" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/cLow"
+        android:hint="Set Low Amount"
+        android:layout_centerVertical="true"
+        android:layout_alignLeft="@+id/textView"
+        android:layout_alignStart="@+id/textView"
+        android:layout_alignRight="@+id/textView"
+        android:layout_alignEnd="@+id/textView" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Commit Edits"
+        android:id="@+id/button"
+        android:layout_below="@+id/cLow"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="48dp" />
 </RelativeLayout>

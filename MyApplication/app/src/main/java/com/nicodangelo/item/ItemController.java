@@ -26,6 +26,10 @@ public class ItemController
     {
         return items.get(spot).toString();
     }
+    public void setLowAmount(int spot, int low)
+    {
+        items.get(spot).setLow(low);
+    }
     public int getSpot()
     {
         return curSpot;
