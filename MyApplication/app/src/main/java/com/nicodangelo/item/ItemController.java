@@ -22,6 +22,7 @@ public class ItemController
         items.add(e);
         curSpot++;
     }
+
     public void setAmount(int i, int spot)
     {
         items.get(i).setAmount(spot);
