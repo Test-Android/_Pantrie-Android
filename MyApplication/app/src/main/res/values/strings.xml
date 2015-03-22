@@ -9,7 +9,7 @@
     <string name="title_activity_forgot_password">ForgotPassword</string>
     <string name="forgotPasswordInfoText">Forgot Password? No big Deal, \n \t \tReset it with Your email</string>
     <string name="emailHintText">Email</string>
-    <string name="resetButtonText6">Reset Password!</string>
+    <string name="resetButtonText6">Reset Password</string>
     <string name="backFromForgotPasswordText">Back</string>
     <string name="enterUsernameText">Username</string>
     <string name="enterPasswordText">Password</string>
@@ -21,4 +21,7 @@
     <string name="newPasswordString">Password</string>
     <string name="confirmPasswordString">Confirm Password</string>
     <string name="createAccountButtonString">Create Account</string>
+    <string name="title_activity_conversion_calculator">ConversionCalculator</string>
+
+    <string name="hello_world">Hello world!</string>
 </resources>

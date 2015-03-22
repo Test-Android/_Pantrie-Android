@@ -1,9 +1,11 @@
 package com.nicodangelo.Util;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.nicodangelo.pantrie.R;
 
@@ -41,5 +43,11 @@ public class Settings extends ActionBarActivity
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void launchConversionCalc(View view)
+    {
+        Intent i = new Intent(this, ConversionCalculator.class);
+        startActivity(i);
     }
 }
