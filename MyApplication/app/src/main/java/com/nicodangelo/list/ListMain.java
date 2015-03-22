@@ -12,6 +12,8 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.text.InputType;
+import android.text.TextUtils;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -19,6 +21,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import java.io.File;
 import java.io.FileInputStream;
@@ -38,6 +41,7 @@ public class ListMain extends ActionBarActivity
     ItemController itemList = new ItemController();
     int curSize = 0;
     ListView lv;
+    Boolean paused = false;
 
     @Override
     public void onCreate(Bundle savedInstanceState)
@@ -95,21 +99,54 @@ public class ListMain extends ActionBarActivity
         lv.setAdapter(adapter);
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+            public void onItemClick(AdapterView<?> parent, View view, final int position, long id) {
                 for(int k = 0; k < curSize; k++)
                 {
                     if(k == position)
                     {
+                        final int a = k;
                         AlertDialog.Builder ab = new AlertDialog.Builder(ListMain.this)
-                                .setTitle("Options")
-                                .setMessage("What do you want to do with this item? ")
                                 .setPositiveButton("Edit Item", new DialogInterface.OnClickListener()
                                 {
                                     @Override
                                     public void onClick(DialogInterface dialog, int which)
                                     {
-                                        Intent editList = new Intent(ListMain.this, EditList.class);
-                                        startActivity(editList);
+                                        AlertDialog.Builder builder = new AlertDialog.Builder(ListMain.this);
+                                        builder.setTitle(itemList.getName(position));
+
+                                        final EditText one = new EditText(ListMain.this);
+                                        one.setHint("Set Amount");
+                                        final EditText two = new EditText(ListMain.this);
+                                        two.setHint("Set Low Amount");
+
+                                        one.setInputType(InputType.TYPE_CLASS_NUMBER);
+                                        two.setInputType(InputType.TYPE_CLASS_NUMBER);
+
+                                        LinearLayout lay = new LinearLayout(ListMain.this);
+                                        lay.setOrientation(LinearLayout.VERTICAL);
+                                        lay.addView(one);
+                                        lay.addView(two);
+                                        builder.setView(lay);
+                                        builder.setPositiveButton("Ok", new DialogInterface.OnClickListener()
+                                        {
+                                            public void onClick(DialogInterface dialog, int whichButton)
+                                            {
+                                                if(!TextUtils.isEmpty(one.getText().toString()))
+                                                    itemList.setAmount(a, Integer.parseInt(one.getText().toString()));
+                                                if(!TextUtils.isEmpty(two.getText().toString()))
+                                                    itemList.setAmount(a,Integer.parseInt(two.getText().toString()));
+                                                adapter.notifyDataSetChanged();
+
+                                            }
+                                        });
+
+                                        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                                            public void onClick(DialogInterface dialog, int whichButton) {
+                                                dialog.cancel();
+                                            }
+                                        });
+                                        builder.create();
+                                        builder.show();
                                     }
                                 })
                                 .setNeutralButton("New Item", new DialogInterface.OnClickListener()
@@ -117,23 +154,59 @@ public class ListMain extends ActionBarActivity
                                     @Override
                                     public void onClick(DialogInterface dialog, int which)
                                     {
+                                        AlertDialog.Builder builder = new AlertDialog.Builder(ListMain.this);
+                                        builder.setTitle("Create New Item");
+                                        final EditText name = new EditText(ListMain.this);
+                                        name.setHint("Name of item (required)");
+                                        final EditText amount = new EditText(ListMain.this);
+                                        amount.setHint("Amount of items(Not Required)");
+                                        final EditText setLow = new EditText(ListMain.this);
+                                        setLow.setHint("Set Low Amount(Not Required)");
 
+
+                                        name.setInputType(InputType.TYPE_CLASS_TEXT);
+                                        amount.setInputType(InputType.TYPE_CLASS_NUMBER);
+                                        setLow.setInputType(InputType.TYPE_CLASS_NUMBER);
+
+                                        LinearLayout lay = new LinearLayout(ListMain.this);
+                                        lay.setOrientation(LinearLayout.VERTICAL);
+                                        lay.addView(name);
+                                        lay.addView(amount);
+                                        lay.addView(setLow);
+                                        builder.setView(lay);
+                                        builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                                            public void onClick(DialogInterface dialog, int whichButton) {
+                                                itemList.addItem(name.getText().toString());
+                                                if (!TextUtils.isEmpty(amount.getText().toString()))
+                                                    itemList.setAmount(a + 1, Integer.parseInt(setLow.getText().toString()));
+                                                if (!TextUtils.isEmpty(setLow.getText().toString()))
+                                                    itemList.setAmount(a + 1, Integer.parseInt(setLow.getText().toString()));
+                                                list.add(itemList.getName(a + 1));
+                                                curSize++;
+                                                adapter.notifyDataSetChanged();
+
+
+                                            }
+                                        });
+                                        builder.create();
+                                        builder.show();
                                     }
                                 })
-                                .setNegativeButton("Cancel", new DialogInterface.OnClickListener()
-                                {
-                                    @Override
-                                    public void onClick(DialogInterface dialog, int which) {} });
+                                .setNegativeButton("Cancel", new DialogInterface.OnClickListener() { @Override public void onClick(DialogInterface dialog, int which){ adapter.notifyDataSetChanged();}});
                         ab.create();
                         ab.show();
                     }
+
                 }
             }
         });
     }
+
     @Override
     protected void onPause()
     {
+        itemList.printAll();
+        paused = true;
         super.onPause();
     }
 
