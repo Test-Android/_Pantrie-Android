@@ -22,9 +22,9 @@ public class ItemController
     {
         items.get(curSpot).setAmount(i);
     }
-    public String getItem(int spot)
+    public String getName(int spot)
     {
-        return items.get(spot).toString();
+        return items.get(spot).getName();
     }
     public void setLowAmount(int spot, int low)
     {

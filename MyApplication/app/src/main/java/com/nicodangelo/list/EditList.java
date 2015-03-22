@@ -39,7 +39,7 @@ public class EditList extends ActionBarActivity
         {
             e.printStackTrace();
         }
-        tv.setText(c.getItem(0));
+        tv.setText(c.getName(0));
     }
 
 }

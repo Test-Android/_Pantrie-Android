@@ -66,7 +66,7 @@ public class ListMain extends ListActivity
             {
                 EditText edit = (EditText) findViewById(R.id.txtItem);
                 itemList.addItem(edit.getText().toString());
-                list.add(itemList.getItem(curSize));
+                list.add(itemList.getName(curSize));
                 edit.setText("");
                 curSize++;
                 adapter.notifyDataSetChanged();
@@ -75,7 +75,6 @@ public class ListMain extends ListActivity
 
         btn.setOnClickListener(listener);
         setListAdapter(adapter);
-
     }
 
     @Override
