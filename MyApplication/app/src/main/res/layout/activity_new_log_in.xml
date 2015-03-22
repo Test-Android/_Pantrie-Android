@@ -10,7 +10,7 @@
                 android:background="#6523AD">
 
     <EditText
-        android:hint="Username"
+        android:hint="@string/newUsernameString"
 
         android:layout_width="250dp"
         android:layout_height="wrap_content"
@@ -22,7 +22,7 @@
         android:layout_marginTop="60dp"/>
 
     <EditText
-        android:hint="Email"
+        android:hint="@string/newEmailString"
 
         android:layout_width="250dp"
         android:layout_height="wrap_content"
@@ -33,7 +33,7 @@
         android:layout_centerHorizontal="true"/>
 
     <EditText
-        android:hint="Password"
+        android:hint="@string/newPasswordString"
 
         android:layout_width="250dp"
         android:layout_height="wrap_content"
@@ -44,7 +44,7 @@
         android:layout_centerHorizontal="true"/>
 
     <EditText
-        android:hint="Confirm Password"
+        android:hint="@string/confirmPasswordString"
 
         android:layout_width="250dp"
         android:layout_height="wrap_content"
@@ -57,7 +57,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Create Account"
+        android:text="@string/createAccountButtonString"
         android:id="@+id/createAccountButton"
         android:layout_alignRight="@+id/newConfirmPasswordText"
         android:layout_alignEnd="@+id/newConfirmPasswordText"
