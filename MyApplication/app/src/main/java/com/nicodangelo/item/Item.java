@@ -76,6 +76,14 @@ public class Item {
 		isSelected = stuff;
 	}
 
+    public String toString()
+    {
+
+        if(amountOfItem != 0)
+            return itemName + " " + amountOfItem;
+        return itemName;
+    }
+
 
 	
 
