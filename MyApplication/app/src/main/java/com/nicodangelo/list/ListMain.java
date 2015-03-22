@@ -152,11 +152,10 @@ public class ListMain extends ListActivity
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings)
         {
-            Inflater i = new Inflater(ListMain.this, Settings.class);
+            Inflater i = new Inflater(this, Settings.class);
             startActivity(i);
             return true;
         }
-
         return super.onOptionsItemSelected(item);
     }
 
