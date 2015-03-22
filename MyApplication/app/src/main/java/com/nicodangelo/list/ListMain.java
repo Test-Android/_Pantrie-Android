@@ -90,7 +90,11 @@ public class ListMain extends ListActivity
         btn.setOnClickListener(listener);
         setListAdapter(adapter);
     }
-
+    @Override
+    protected void onPause()
+    {
+        
+    }
     @Override
     protected void onListItemClick(ListView l, View v, int position, long id)
     {
