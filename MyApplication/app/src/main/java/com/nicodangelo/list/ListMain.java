@@ -216,7 +216,9 @@ public class ListMain extends ActionBarActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu)
     {
+        getMenuInflater().inflate(R.menu.menu_add_item, menu);
         getMenuInflater().inflate(R.menu.menu_settings, menu);
+        getMenuInflater().inflate(R.menu.menu_edit_list, menu);
         return true;
     }
     @Override
@@ -233,6 +235,46 @@ public class ListMain extends ActionBarActivity
             Intent i = new Intent(this, Settings.class);
             startActivity(i);
             return true;
+        }
+        else if(id == R.id.action_add_item)
+        {
+            AlertDialog.Builder builder = new AlertDialog.Builder(ListMain.this);
+            builder.setTitle("Create New Item");
+            final EditText name = new EditText(ListMain.this);
+            name.setHint("Name of item (required)");
+            final EditText amount = new EditText(ListMain.this);
+            amount.setHint("Amount of items(Not Required)");
+            final EditText setLow = new EditText(ListMain.this);
+            setLow.setHint("Set Low Amount(Not Required)");
+
+
+            name.setInputType(InputType.TYPE_CLASS_TEXT);
+            amount.setInputType(InputType.TYPE_CLASS_NUMBER);
+            setLow.setInputType(InputType.TYPE_CLASS_NUMBER);
+
+            LinearLayout lay = new LinearLayout(ListMain.this);
+            lay.setOrientation(LinearLayout.VERTICAL);
+            lay.addView(name);
+            lay.addView(amount);
+            lay.addView(setLow);
+            builder.setView(lay);
+            builder.setPositiveButton("Ok", new DialogInterface.OnClickListener()
+            {
+                public void onClick(DialogInterface dialog, int whichButton)
+                {
+                    itemList.addItem(name.getText().toString());
+                    if (!TextUtils.isEmpty(amount.getText().toString()))
+                        itemList.setAmount(curSize, Integer.parseInt(amount.getText().toString()));
+                    if (!TextUtils.isEmpty(setLow.getText().toString()))
+                        itemList.setLowAmount(curSize, Integer.parseInt(setLow.getText().toString()));
+                    list.add(itemList.getInfo(curSize));
+                    curSize++;
+                    adapter.notifyDataSetChanged();
+
+                }
+            });
+            builder.create();
+            builder.show();
         }
 
         return super.onOptionsItemSelected(item);
