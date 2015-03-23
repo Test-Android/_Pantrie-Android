@@ -445,10 +445,6 @@ public class ConversionCalculator extends ActionBarActivity
         {
             return true;
         }
-        else if(id == R.id.mass)
-        {
-            return true;
-        }
 
         return super.onOptionsItemSelected(item);
     }

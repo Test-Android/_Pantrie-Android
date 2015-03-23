@@ -5,15 +5,12 @@
 
     <item android:id="@+id/volume"
           android:title="Volume"
-          android:icon="@drawable/ic_action_new"
+          android:icon="@mipmap/ic_launcher"
           app:showAsAction="always"/>
     <item android:id="@+id/length"
           android:title="Length"
-          android:icon="@drawable/ic_action_new"
+          android:icon="@drawable/application_icon"
           app:showAsAction="always"/>
-    <item android:id="@+id/mass"
-        android:title="Mass"
-        android:icon="@drawable/ic_action_new"
-        app:showAsAction="always"/>
+
 
 </menu>
