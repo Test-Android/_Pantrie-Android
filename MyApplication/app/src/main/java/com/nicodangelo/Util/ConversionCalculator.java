@@ -6,6 +6,7 @@ package com.nicodangelo.Util;
 import android.app.AlertDialog;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.text.TextUtils;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -13,6 +14,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.nicodangelo.pantrie.R;
 
@@ -27,17 +29,18 @@ public class ConversionCalculator extends ActionBarActivity
     private AlertDialog ad;
     private AlertDialog.Builder b;
     private AlertDialog bd;
-    private double inputNum;
-    private double outputNum;
+    private double inputNum = 0;
+    private double outputNum = 0;
     private LinearLayout layout1;
     private LinearLayout layout2;
-    private String index1;
-    private String index2;
+    private String index1 = "grams";
+    private String index2 = "grams";
 
     private String onceString;
     private String gramString;
     private String poundString;
     private String milligramString;
+    private String kilograms;
 
 
     @Override
@@ -49,35 +52,49 @@ public class ConversionCalculator extends ActionBarActivity
 
     public void makeConversion(View view)
     {
+        input = (EditText) findViewById(R.id.input);
+        if (TextUtils.isEmpty(input.getText().toString()))
+        {
+            Toast toast = Toast.makeText(getApplicationContext(), "Try Again... please", Toast.LENGTH_SHORT);
+            toast.show();
+            return;
+        }
         layout1.removeAllViews();
         layout2.removeAllViews();
-
-        input = (EditText) findViewById(R.id.input);
         output = (TextView) findViewById(R.id.output);
 
         inputNum = Double.parseDouble(input.getText().toString());
 
-        //MASS AND WEIGHT
-        if(index1.equals(index2)) {outputNum = inputNum;}
-        if(index1.equals("ounces") && index2.equals("grams")) {outputNum = inputNum * 28.3;}
-        if(index1.equals("grams") && index2.equals("ounces")) {outputNum = inputNum * .0353;}
-        if(index1.equals("pounds") && index2.equals("grams")) {outputNum = inputNum * 453.59;}
-        if(index1.equals("grams") && index2.equals("pounds")) {outputNum = inputNum * 0.0022046;}//broke
-        if(index1.equals("pounds") && index2.equals("ounces")) {outputNum = inputNum * 16.000;}
-        if(index1.equals("ounces") && index2.equals("pounds")) {outputNum = inputNum * 0.062500;}
-        if(index1.equals("milligrams") && index2.equals("grams")) {outputNum = inputNum / 1000.0;}
-        if(index1.equals("milligrams") && index2.equals("ounces")) {outputNum = inputNum * 0.000035274;}//broke
-        if(index1.equals("milligrams") && index2.equals("pounds")) {outputNum = inputNum * 0.000002204;}
-        if(index1.equals("grams") && index2.equals("milligrams")) {outputNum = inputNum / 0.0010000;}
-        if(index1.equals("ounces") && index2.equals("milligrams")) {outputNum = inputNum * 28349.523;}
-        if(index1.equals("pounds") && index2.equals("milligrams")) {outputNum = inputNum * 453592;}
+        if (!TextUtils.isEmpty(input.getText().toString()))
+        {
+            //MASS AND WEIGHT
+            if(index1.equals(index2)) {outputNum = inputNum;}
+            if(index1.equals("ounces") && index2.equals("grams")) {outputNum = inputNum * 28.3;}
+            if(index1.equals("grams") && index2.equals("ounces")) {outputNum = inputNum * .0353;}
+            if(index1.equals("pounds") && index2.equals("grams")) {outputNum = inputNum * 453.59;}
+            if(index1.equals("grams") && index2.equals("pounds")) {outputNum = inputNum * 0.0022046;}//broke
+            if(index1.equals("pounds") && index2.equals("ounces")) {outputNum = inputNum * 16.000;}
+            if(index1.equals("ounces") && index2.equals("pounds")) {outputNum = inputNum * 0.062500;}
+            if(index1.equals("milligrams") && index2.equals("grams")) {outputNum = inputNum / 1000.0;}
+            if(index1.equals("milligrams") && index2.equals("ounces")) {outputNum = inputNum * 0.000035274;}//broke
+            if(index1.equals("milligrams") && index2.equals("pounds")) {outputNum = inputNum * 0.000002204;}
+            if(index1.equals("grams") && index2.equals("milligrams")) {outputNum = inputNum / 0.0010000;}
+            if(index1.equals("ounces") && index2.equals("milligrams")) {outputNum = inputNum * 28349.523;}
+            if(index1.equals("pounds") && index2.equals("milligrams")) {outputNum = inputNum * 453592;}
+
+            //VOLUME
+
+            //LENGTH
+
+           output.setText(Double.toString(outputNum));
+        }
+        else
+        {
+            Toast toast = Toast.makeText(getApplicationContext(), "Try Again... please", Toast.LENGTH_SHORT);
+        }
 
 
-        //VOLUME
 
-        //LENGTH
-
-        output.setText(Double.toString(outputNum));
     }
 
     public void firstConversion(View view)
