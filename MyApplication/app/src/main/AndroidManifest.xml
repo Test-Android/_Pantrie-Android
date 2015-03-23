@@ -51,10 +51,7 @@
             android:name="com.nicodangelo.Util.ConversionCalculatorVolume"
             android:label="@string/title_activity_conversion_calculator_volume" >
         </activity>
-        <activity
-            android:name=".ConversionCalculatorVolume"
-            android:label="@string/title_activity_conversion_calculator_volume" >
-        </activity>
+
     </application>
 
 </manifest>
