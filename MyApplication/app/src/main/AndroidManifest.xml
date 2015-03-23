@@ -43,7 +43,7 @@
             android:label="@string/title_activity_list_adapter">
         </activity>
         <activity
-            android:name="com.nicodangelo.Util.ConversionCalculator"
+            android:name="com.nicodangelo.Util.ConversionCalculatorMass"
             android:label="@string/title_activity_conversion_calculator" >
         </activity>
     </application>
