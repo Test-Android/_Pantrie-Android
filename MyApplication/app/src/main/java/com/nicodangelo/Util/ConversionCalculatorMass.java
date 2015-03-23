@@ -18,7 +18,7 @@ import android.widget.Toast;
 
 import com.nicodangelo.pantrie.R;
 
-public class ConversionCalculator extends ActionBarActivity
+public class ConversionCalculatorMass extends ActionBarActivity
 {
     //They may be not used however these are all the "Objects" in the class that are active and do things:)
     private EditText input;
@@ -110,91 +110,6 @@ public class ConversionCalculator extends ActionBarActivity
             if(index1.equals("grams") && index2.equals("kilograms")) {outputNum = inputNum * 0.001;}
             if(index1.equals("milligrams") && index2.equals("kilograms")) {outputNum = inputNum * 0.000001;}
 
-            //VOLUME
-            if(index1.equals(index2)) {outputNum = inputNum;}
-            if(index1.equals("teaspoon") && index2.equals("tablespoon")) {outputNum = inputNum * 0.33333;}
-            ///////////////////////////////////////////////////////////////////////////////////////////////////////////
-            if(index1.equals("tablespoon") && index2.equals("teaspoon")) {outputNum = inputNum * 3;}
-            ///////////////////////////////////////////////////////////////////////////////////////////////////////////
-            if(index1.equals("fluid ounce") && index2.equals("teaspoon")) {outputNum = inputNum * 6;}
-            if(index1.equals("fluid ounce") && index2.equals("tablespoon")) {outputNum = inputNum * 2;}
-            if(index1.equals("teaspoon") && index2.equals("fluid ounce")) {outputNum = inputNum * 0.166667;}
-            if(index1.equals("tablespoon") && index2.equals("fluid ounce")) {outputNum = inputNum * 0.5;}
-            ///////////////////////////////////////////////////////////////////////////////////////////////////////////
-            if(index1.equals("gill") && index2.equals("teaspoon")) {outputNum = inputNum * 24;}
-            if(index1.equals("gill") && index2.equals("tablespoon")) {outputNum = inputNum * 8;}
-            if(index1.equals("gill") && index2.equals("fluid ounce")) {outputNum = inputNum * 4;}
-            if(index1.equals("teaspoon") && index2.equals("gill")) {outputNum = inputNum * 0.0416666667;}
-            if(index1.equals("tablespoon") && index2.equals("gill")) {outputNum = inputNum * 0.125;}
-            if(index1.equals("fluid ounce") && index2.equals("gill")) {outputNum = inputNum * 0.25;}
-            ///////////////////////////////////////////////////////////////////////////////////////////////////////////
-            if(index1.equals("cup") && index2.equals("teaspoon")) {outputNum = inputNum * 48;}
-            if(index1.equals("cup") && index2.equals("tablespoon")) {outputNum = inputNum * 16;}
-            if(index1.equals("cup") && index2.equals("fluid ounce")) {outputNum = inputNum * 8;}
-            if(index1.equals("cup") && index2.equals("gill")) {outputNum = inputNum * 2;}
-            if(index1.equals("teaspoon") && index2.equals("cup")) {outputNum = inputNum * 0.0208333;}
-            if(index1.equals("tablespoon") && index2.equals("cup")) {outputNum = inputNum * 0.0625;}
-            if(index1.equals("fluid ounce") && index2.equals("cup")) {outputNum = inputNum * 0.125;}
-            if(index1.equals("gill") && index2.equals("cup")) {outputNum = inputNum * 0.5;}
-            ///////////////////////////////////////////////////////////////////////////////////////////////////////////
-            if(index1.equals("pint") && index2.equals("teaspoon")) {outputNum = inputNum * 96;}
-            if(index1.equals("pint") && index2.equals("tablespoon")) {outputNum = inputNum * 32;}
-            if(index1.equals("pint") && index2.equals("fluid ounce")) {outputNum = inputNum * 16;}
-            if(index1.equals("pint") && index2.equals("gill")) {outputNum = inputNum * 4;}
-            if(index1.equals("pint") && index2.equals("cup")) {outputNum = inputNum * 2;}
-            if(index1.equals("teaspoon") && index2.equals("pint")) {outputNum = inputNum * 0.0104167;}
-            if(index1.equals("tablespoon") && index2.equals("pint")) {outputNum = inputNum * 0.03125;}
-            if(index1.equals("fluid ounce") && index2.equals("pint")) {outputNum = inputNum * 0.0625;}
-            if(index1.equals("gill") && index2.equals("pint")) {outputNum = inputNum * 0.25;}
-            if(index1.equals("cup") && index2.equals("pint")) {outputNum = inputNum * 0.5;}
-            ///////////////////////////////////////////////////////////////////////////////////////////////////////////
-            if(index1.equals("quart") && index2.equals("teaspoon")) {outputNum = inputNum * 192;}
-            if(index1.equals("quart") && index2.equals("tablespoon")) {outputNum = inputNum * 64;}
-            if(index1.equals("quart") && index2.equals("fluid ounce")) {outputNum = inputNum * 32;}
-            if(index1.equals("quart") && index2.equals("gill")) {outputNum = inputNum * 8;}
-            if(index1.equals("quart") && index2.equals("cup")) {outputNum = inputNum * 4;}
-            if(index1.equals("quart") && index2.equals("pint")) {outputNum = inputNum * 2;}
-            if(index1.equals("teaspoon") && index2.equals("quart")) {outputNum = inputNum * 0.00520833;}
-            if(index1.equals("tablespoon") && index2.equals("quart")) {outputNum = inputNum * 0.015625;}
-            if(index1.equals("fluid ounce") && index2.equals("quart")) {outputNum = inputNum * 0.03125;}
-            if(index1.equals("gill") && index2.equals("quart")) {outputNum = inputNum * 0.125;}
-            if(index1.equals("cup") && index2.equals("quart")) {outputNum = inputNum * 0.25;}
-            if(index1.equals("pint") && index2.equals("quart")) {outputNum = inputNum * 0.5;}
-            ///////////////////////////////////////////////////////////////////////////////////////////////////////////
-            if(index1.equals("gallon") && index2.equals("teaspoon")) {outputNum = inputNum * 768;}
-            if(index1.equals("gallon") && index2.equals("tablespoon")) {outputNum = inputNum * 256;}
-            if(index1.equals("gallon") && index2.equals("fluid ounce")) {outputNum = inputNum * 128;}
-            if(index1.equals("gallon") && index2.equals("gill")) {outputNum = inputNum * 32;}
-            if(index1.equals("gallon") && index2.equals("cup")) {outputNum = inputNum * 16;}
-            if(index1.equals("gallon") && index2.equals("pint")) {outputNum = inputNum * 8;}
-            if(index1.equals("gallon") && index2.equals("quart")) {outputNum = inputNum * 4;}
-            if(index1.equals("teaspoon") && index2.equals("gallon")) {outputNum = inputNum * 0.00130208;}
-            if(index1.equals("tablespoon") && index2.equals("gallon")) {outputNum = inputNum * 0.00390625;}
-            if(index1.equals("fluid ounce") && index2.equals("gallon")) {outputNum = inputNum * 0.0078125;}
-            if(index1.equals("gill") && index2.equals("gallon")) {outputNum = inputNum * 0.03125;}
-            if(index1.equals("cup") && index2.equals("gallon")) {outputNum = inputNum * 0.0625;}
-            if(index1.equals("pint") && index2.equals("gallon")) {outputNum = inputNum * 0.125;}
-            if(index1.equals("quart") && index2.equals("gallon")) {outputNum = inputNum * 0.25;}
-            ///////////////////////////////////////////////////////////////////////////////////////////////////////////
-            if(index1.equals("milliliter") && index2.equals("teaspoon")) {outputNum = inputNum * 0.202884;}
-            if(index1.equals("milliliter") && index2.equals("tablespoon")) {outputNum = inputNum * 0.067628;}
-            if(index1.equals("milliliter") && index2.equals("fluid ounce")) {outputNum = inputNum * 0.33814;}
-            if(index1.equals("milliliter") && index2.equals("gill")) {outputNum = inputNum * 0.00845350568;}
-            if(index1.equals("milliliter") && index2.equals("cup")) {outputNum = inputNum * 0.00422675;}
-            if(index1.equals("milliliter") && index2.equals("pint")) {outputNum = inputNum * 0.00211338;}
-            if(index1.equals("milliliter") && index2.equals("quart")) {outputNum = inputNum * 0.00105669;}
-            if(index1.equals("milliliter") && index2.equals("gallon")) {outputNum = inputNum * 0.000264172;}
-            if(index1.equals("teaspoon") && index2.equals("milliliter")) {outputNum = inputNum * 4.92892;}
-            if(index1.equals("tablespoon") && index2.equals("milliliter")) {outputNum = inputNum * 14.7868;}
-            if(index1.equals("fluid ounce") && index2.equals("milliliter")) {outputNum = inputNum * 29.5735;}
-            if(index1.equals("gill") && index2.equals("milliliter")) {outputNum = inputNum * 118.294118;}
-            if(index1.equals("cup") && index2.equals("milliliter")) {outputNum = inputNum * 236.588;}
-            if(index1.equals("pint") && index2.equals("milliliter")) {outputNum = inputNum * 473.176;}
-            if(index1.equals("quart") && index2.equals("milliliter")) {outputNum = inputNum * 946.353;}
-            if(index1.equals("gallon") && index2.equals("milliliter")) {outputNum = inputNum * 3785.41;}
-            ///////////////////////////////////////////////////////////////////////////////////////////////////////////
-                //liter
-                //deciliter
 
             //LENGTH
                 //millimeter
@@ -234,11 +149,11 @@ public class ConversionCalculator extends ActionBarActivity
         a.setCancelable(false);
 
         //Create the button
-        final Button ounces1 = new Button(ConversionCalculator.this);
-        final Button grams1 = new Button(ConversionCalculator.this);
-        final Button pounds1 = new Button(ConversionCalculator.this);
-        final Button milligrams1 = new Button(ConversionCalculator.this);
-        final Button kilograms1 = new Button (ConversionCalculator.this);
+        final Button ounces1 = new Button(ConversionCalculatorMass.this);
+        final Button grams1 = new Button(ConversionCalculatorMass.this);
+        final Button pounds1 = new Button(ConversionCalculatorMass.this);
+        final Button milligrams1 = new Button(ConversionCalculatorMass.this);
+        final Button kilograms1 = new Button (ConversionCalculatorMass.this);
 
         //set the name to the buttons
         ounces1.setText("ounces");
@@ -308,7 +223,7 @@ public class ConversionCalculator extends ActionBarActivity
 
         //NOW ADD THE STUFF CREATED ABOVE TO THE VIEW WITH A NEW LAYOUT
 
-        layout1 = new LinearLayout(ConversionCalculator.this);
+        layout1 = new LinearLayout(ConversionCalculatorMass.this);
         layout1.setOrientation(LinearLayout.VERTICAL);
         //Add the buttons to the layout
         layout1.addView(ounces1);
@@ -338,11 +253,11 @@ public class ConversionCalculator extends ActionBarActivity
         b.setCancelable(false);
 
         //Create the button
-        final Button ounces2 = new Button(ConversionCalculator.this);
-        final Button grams2 = new Button(ConversionCalculator.this);
-        final Button pounds2 = new Button(ConversionCalculator.this);
-        final Button milligrams2 = new Button(ConversionCalculator.this);
-        final Button kilograms2 = new Button(ConversionCalculator.this);
+        final Button ounces2 = new Button(ConversionCalculatorMass.this);
+        final Button grams2 = new Button(ConversionCalculatorMass.this);
+        final Button pounds2 = new Button(ConversionCalculatorMass.this);
+        final Button milligrams2 = new Button(ConversionCalculatorMass.this);
+        final Button kilograms2 = new Button(ConversionCalculatorMass.this);
 
         //set the name to the buttons
         ounces2.setText("ounces");
@@ -407,7 +322,7 @@ public class ConversionCalculator extends ActionBarActivity
             }
         });
 
-        layout2 = new LinearLayout(ConversionCalculator.this);
+        layout2 = new LinearLayout(ConversionCalculatorMass.this);
         layout2.setOrientation(LinearLayout.VERTICAL);
         //Add the buttons to the layout
         layout2.addView(ounces2);
