@@ -4,7 +4,6 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -41,15 +40,11 @@
         </activity>
         <activity
             android:name="com.nicodangelo.list.ListAdapter"
-            android:label="@string/title_activity_list_adapter" >
+            android:label="@string/title_activity_list_adapter">
         </activity>
         <activity
-            android:name="com.nicodangelo.Util.ConversionCalculatorMass"
+            android:name="com.nicodangelo.Util.ConversionCalculator"
             android:label="@string/title_activity_conversion_calculator" >
-        </activity>
-        <activity
-            android:name="com.nicodangelo.Util.ConversionCalculatorVolume"
-            android:label="@string/title_activity_conversion_calculator_volume" >
         </activity>
     </application>
 

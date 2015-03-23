@@ -4,7 +4,6 @@ package com.nicodangelo.Util;
 
 
 import android.app.AlertDialog;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.text.TextUtils;
@@ -19,7 +18,7 @@ import android.widget.Toast;
 
 import com.nicodangelo.pantrie.R;
 
-public class ConversionCalculatorMass extends ActionBarActivity
+public class ConversionCalculator extends ActionBarActivity
 {
     //They may be not used however these are all the "Objects" in the class that are active and do things:)
     private EditText input;
@@ -235,11 +234,11 @@ public class ConversionCalculatorMass extends ActionBarActivity
         a.setCancelable(false);
 
         //Create the button
-        final Button ounces1 = new Button(ConversionCalculatorMass.this);
-        final Button grams1 = new Button(ConversionCalculatorMass.this);
-        final Button pounds1 = new Button(ConversionCalculatorMass.this);
-        final Button milligrams1 = new Button(ConversionCalculatorMass.this);
-        final Button kilograms1 = new Button (ConversionCalculatorMass.this);
+        final Button ounces1 = new Button(ConversionCalculator.this);
+        final Button grams1 = new Button(ConversionCalculator.this);
+        final Button pounds1 = new Button(ConversionCalculator.this);
+        final Button milligrams1 = new Button(ConversionCalculator.this);
+        final Button kilograms1 = new Button (ConversionCalculator.this);
 
         //set the name to the buttons
         ounces1.setText("ounces");
@@ -309,7 +308,7 @@ public class ConversionCalculatorMass extends ActionBarActivity
 
         //NOW ADD THE STUFF CREATED ABOVE TO THE VIEW WITH A NEW LAYOUT
 
-        layout1 = new LinearLayout(ConversionCalculatorMass.this);
+        layout1 = new LinearLayout(ConversionCalculator.this);
         layout1.setOrientation(LinearLayout.VERTICAL);
         //Add the buttons to the layout
         layout1.addView(ounces1);
@@ -339,11 +338,11 @@ public class ConversionCalculatorMass extends ActionBarActivity
         b.setCancelable(false);
 
         //Create the button
-        final Button ounces2 = new Button(ConversionCalculatorMass.this);
-        final Button grams2 = new Button(ConversionCalculatorMass.this);
-        final Button pounds2 = new Button(ConversionCalculatorMass.this);
-        final Button milligrams2 = new Button(ConversionCalculatorMass.this);
-        final Button kilograms2 = new Button(ConversionCalculatorMass.this);
+        final Button ounces2 = new Button(ConversionCalculator.this);
+        final Button grams2 = new Button(ConversionCalculator.this);
+        final Button pounds2 = new Button(ConversionCalculator.this);
+        final Button milligrams2 = new Button(ConversionCalculator.this);
+        final Button kilograms2 = new Button(ConversionCalculator.this);
 
         //set the name to the buttons
         ounces2.setText("ounces");
@@ -408,7 +407,7 @@ public class ConversionCalculatorMass extends ActionBarActivity
             }
         });
 
-        layout2 = new LinearLayout(ConversionCalculatorMass.this);
+        layout2 = new LinearLayout(ConversionCalculator.this);
         layout2.setOrientation(LinearLayout.VERTICAL);
         //Add the buttons to the layout
         layout2.addView(ounces2);
@@ -440,8 +439,6 @@ public class ConversionCalculatorMass extends ActionBarActivity
         //noinspection SimplifiableIfStatement
         if (id == R.id.volume)
         {
-            Intent i = new Intent(this, ConversionCalculatorVolume.class);
-            startActivity(i);
             return true;
         }
         else if(id == R.id.length)
