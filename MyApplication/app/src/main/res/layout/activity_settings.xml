@@ -8,7 +8,7 @@
                 android:paddingBottom="@dimen/activity_vertical_margin"
                 tools:context="com.nicodangelo.Util.Settings"
                 android:background="#6523AD"
-                android:onClick="launchConversionCalc">
+    >
 
 
     <Button
@@ -18,5 +18,6 @@
         android:id="@+id/ConvertNumber"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"/>
+        android:layout_alignParentStart="true"
+        android:onClick="launchConversionCalc"/>
 </RelativeLayout>
