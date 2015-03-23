@@ -2,150 +2,183 @@
 
 package com.nicodangelo.Util;
 
+
 import android.app.AlertDialog;
-import android.content.DialogInterface;
-import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ExpandableListAdapter;
-import android.widget.ExpandableListView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
-import com.nicodangelo.list.ListMain;
 import com.nicodangelo.pantrie.R;
 
 public class ConversionCalculator extends ActionBarActivity
 {
-    AlertDialog.Builder ab;
-    AlertDialog.Builder ac;
-    EditText firstNumberText;
-    EditText seccondNumberText;
-    Button firstChoice;
-    Button seccondChoice;
-    String firstIdent;
-    String seccIdent;
-    Button ConvertButton;
-    double firstNum;
-    double secNum;
+    private EditText input;
+    private TextView output;
+    private Button itemSelect1;
+    private Button itemSelect2;
+    private Button convert;
+    private AlertDialog.Builder a;
+    private AlertDialog ad;
+    private AlertDialog.Builder b;
+    private AlertDialog bd;
+    private double inputNum;
+    private double outputNum;
+    private LinearLayout layout1;
+    private LinearLayout layout2;
+    private String index1;
+    private String index2;
+
+    private String onceString;
+    private String gramString;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_conversion_calculator);
+    }
 
-        ab = new AlertDialog.Builder(this)
+    public void makeConversion(View view)
+    {
+        layout1.removeAllViews();
+        layout2.removeAllViews();
+
+        input = (EditText) findViewById(R.id.input);
+        output = (TextView) findViewById(R.id.output);
+
+        inputNum = Double.parseDouble(input.getText().toString());
+
+        //ALL THE GOD FORSAKEN IF STATEMENTS!
+        if(index1.equals(index2)) {outputNum = inputNum;}
+        if(index1.equals("ounces") && index2.equals("grams")) {outputNum = inputNum * 28.3;}
+        if(index1.equals("grams") && index2.equals("ounces")) {outputNum = inputNum * .0353;}
+
+        output.setText(Double.toString(outputNum));
+    }
+
+    public void firstConversion(View view)
+    {
+        ///////////////////////////////////////////////////////////////////////////////////////////////////
+        //THE FIRST DIALOG BOX AND ITS ATTRIBUTES
+
+        itemSelect1 = (Button) findViewById(R.id.itemSelect1);
+
+        //create the Alert Dialog 1
+        a = new AlertDialog.Builder(this)
                 .setTitle("Measurements")
-                .setMessage("Pick a measurement to convert from.");
-        ab.setCancelable(false);
+                .setMessage("Pick a measurement to convert from");
+        a.setCancelable(false);
 
-        final Button ounces = new Button(ConversionCalculator.this);
-        final Button grams = new Button(ConversionCalculator.this);
+        //Create the button
+        final Button ounces1 = new Button(ConversionCalculator.this);
+        final Button grams1 = new Button(ConversionCalculator.this);
 
-        ounces.setText("Ounces");
-        ounces.setOnClickListener(new View.OnClickListener()
+        //set the name to the buttons
+        ounces1.setText("ounces");
+        grams1.setText("grams");
+
+        //all the on click listeners...
+        ounces1.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v)
             {
-                firstChoice = (Button) findViewById(R.id.firstChoice);
-                firstChoice.setText("ounces");
-                firstIdent = "ounces";
+                ad.dismiss();
+                index1 = "ounces";
+                itemSelect1.setText("ounces");
             }
         });
 
-        grams.setText("Grams");
-        ounces.setOnClickListener(new View.OnClickListener()
+        grams1.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v)
             {
-                firstChoice = (Button) findViewById(R.id.seccondChoice);
-                firstChoice.setText("ounces");
-                firstIdent = "ounces";
+                ad.dismiss();
+                index1 = "grams";
+                itemSelect1.setText("grams");
+
             }
         });
 
-        LinearLayout lay = new LinearLayout(ConversionCalculator.this);
-        lay.setOrientation(LinearLayout.VERTICAL);
-        lay.addView(grams);
-        lay.addView(ounces);
-        ab.setView(lay);
-        ab.create();
+        //NOW ADD THE STUFF CREATED ABOVE TO THE VIEW WITH A NEW LAYOUT
 
-        ac = new AlertDialog.Builder(this)
+        layout1 = new LinearLayout(ConversionCalculator.this);
+        layout1.setOrientation(LinearLayout.VERTICAL);
+        //Add the buttons to the layout
+        layout1.addView(ounces1);
+        layout1.addView(grams1);
+        //now set the view and create it
+        a.setView(layout1);
+        ad = a.create();
+        ad = a.show();
+    }
+
+    public void secondConversion(View view)
+    {
+        ///////////////////////////////////////////////////////////////////////////////////////////////////
+        //THE SECOND DIALOG BOX AND ITS ATTRIBUTES
+
+        itemSelect2 = (Button) findViewById(R.id.itemSelect2);
+
+        b = new AlertDialog.Builder(this)
                 .setTitle("Measurements")
-                .setMessage("Pick a measurement to convert from.");
-        ac.setCancelable(false);
+                .setMessage("Pick a measurement to convert from");
+        b.setCancelable(false);
 
+        //Create the button
         final Button ounces2 = new Button(ConversionCalculator.this);
         final Button grams2 = new Button(ConversionCalculator.this);
 
-        ounces2.setText("Ounces");
+        //set the name to the buttons
+        ounces2.setText("ounces");
+        grams2.setText("grams");
+
+        //all the on click listeners...
         ounces2.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v)
             {
-                seccondChoice = (Button) findViewById(R.id.firstChoice);
-                seccondChoice.setText("ounces");
-                seccIdent = "ounces";
+                bd.dismiss();
+                index2 = "ounces";
+                itemSelect2.setText("ounces");
             }
         });
 
-        grams2.setText("Grams");
         grams2.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v)
             {
-                seccondChoice = (Button) findViewById(R.id.seccondChoice);
-                seccondChoice.setText("grams");
-                seccIdent = "grams";
+                bd.dismiss();
+                index2 = "grams";
+                itemSelect2.setText("grams");
             }
         });
 
-        LinearLayout lay2 = new LinearLayout(ConversionCalculator.this);
-        lay2.setOrientation(LinearLayout.VERTICAL);
-        lay2.removeAllViews();
-        lay2.addView(grams2);
-        lay2.addView(ounces2);
-        ab.setView(lay2);
-        ab.create();
-    }
-
-    public void convertThings(View view)
-    {
-        firstNumberText = (EditText)findViewById(R.id.firstNumberText);
-        seccondNumberText = (EditText) findViewById(R.id.seccondNumberText);
-        firstNum = Integer.parseInt(firstNumberText.getText().toString());
-        System.out.println("number aquired!");
-
-        if(firstIdent.equals("ounces") && seccIdent.equals("grams"))
-        {
-            secNum = firstNum * 28.3;
-            String space = Double.toString(secNum);
-            seccondNumberText.setText(space);
-        }
-    }
-    public void firstChoiceDialog(View view)
-    {
-        ab.show();
+        layout2 = new LinearLayout(ConversionCalculator.this);
+        layout2.setOrientation(LinearLayout.VERTICAL);
+        //Add the buttons to the layout
+        layout2.addView(ounces2);
+        layout2.addView(grams2);
+        //now set the view and create it
+        b.setView(layout2);
+        bd = b.create();
+        bd = b.show();
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu)
     {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_conversion_calculator, menu);
-        return true;
+        return super.onCreateOptionsMenu(menu);
     }
 
     @Override
@@ -159,8 +192,6 @@ public class ConversionCalculator extends ActionBarActivity
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings)
         {
-            Intent i = new Intent(this, Settings.class);
-            startActivity(i);
             return true;
         }
 

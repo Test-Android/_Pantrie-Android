@@ -6,54 +6,52 @@
                 android:paddingRight="@dimen/activity_horizontal_margin"
                 android:paddingTop="@dimen/activity_vertical_margin"
                 android:paddingBottom="@dimen/activity_vertical_margin"
-                tools:context="com.nicodangelo.Util.ConversionCalculator">
+                tools:context="com.nicodangelo.Util.ConversionCalculator"
+                android:id="@+id/layoutForConversion">
 
     <EditText
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/input"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="90dp"/>
+
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="numberDecimal"
-        android:ems="10"
-        android:id="@+id/firstNumberText"
-        android:layout_marginTop="23dp"
-        android:layout_alignParentTop="true"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/output"
+        android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"/>
 
-    <EditText
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="numberDecimal"
-        android:ems="10"
-        android:id="@+id/seccondNumberText"
-        android:layout_below="@+id/firstChoice"
+        android:text="New Button"
+        android:id="@+id/itemSelect1"
+        android:layout_below="@+id/input"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"/>
+        android:onClick="firstConversion"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="new button"
+        android:id="@+id/itemSelect2"
+        android:layout_below="@+id/output"
+        android:layout_centerHorizontal="true"
+        android:onClick="secondConversion"/>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Convert"
-        android:id="@+id/convertButton"
-        android:layout_below="@+id/seccondNumberText"
+        android:id="@+id/convert"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="94dp"
-        android:onClick="convertThings"/>
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="ounces"
-        android:id="@+id/firstChoice"
-        android:layout_below="@+id/firstNumberText"
-        android:layout_centerHorizontal="true"
-        android:onClick="firstChoiceDialog"/>
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="grams"
-        android:id="@+id/seccondChoice"
-        android:layout_below="@+id/seccondNumberText"
-        android:layout_centerHorizontal="true"/>
+        android:layout_marginBottom="62dp"
+        android:onClick="makeConversion"/>
 
 
 </RelativeLayout>
