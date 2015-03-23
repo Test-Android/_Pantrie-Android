@@ -1,3 +1,5 @@
+//@author Jake Cox
+
 package com.nicodangelo.Util;
 
 import android.content.Intent;
