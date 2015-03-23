@@ -387,7 +387,7 @@ public class ConversionCalculatorVolume extends ActionBarActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu)
     {
-        getMenuInflater().inflate(R.menu.menu_conversion_calculator, menu);
+        getMenuInflater().inflate(R.menu.menu_conversion_calculator_volume, menu);
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -400,14 +400,14 @@ public class ConversionCalculatorVolume extends ActionBarActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.volume)
+        if (id == R.id.length)
+        {
+            return true;
+        }
+        else if(id == R.id.mass)
         {
             Intent i = new Intent(this, ConversionCalculatorMass.class);
             startActivity(i);
-            return true;
-        }
-        else if(id == R.id.length)
-        {
             return true;
         }
 

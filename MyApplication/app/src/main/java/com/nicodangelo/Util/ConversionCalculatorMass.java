@@ -4,6 +4,7 @@ package com.nicodangelo.Util;
 
 
 import android.app.AlertDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.text.TextUtils;
@@ -354,6 +355,8 @@ public class ConversionCalculatorMass extends ActionBarActivity
         //noinspection SimplifiableIfStatement
         if (id == R.id.volume)
         {
+            Intent i = new Intent(ConversionCalculatorMass.this, ConversionCalculatorVolume.class);
+            startActivity(i);
             return true;
         }
         else if(id == R.id.length)
