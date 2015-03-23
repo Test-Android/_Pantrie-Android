@@ -20,6 +20,7 @@ import com.nicodangelo.pantrie.R;
 
 public class ConversionCalculator extends ActionBarActivity
 {
+    //They may be not used however these are all the "Objects" in the class that are active and do things:)
     private EditText input;
     private TextView output;
     private Button itemSelect1;
@@ -36,6 +37,7 @@ public class ConversionCalculator extends ActionBarActivity
     private String index1 = "grams";
     private String index2 = "grams";
 
+    //these are not used yet but are placements for later (keep these:))
     private String onceString;
     private String gramString;
     private String poundString;
@@ -50,6 +52,9 @@ public class ConversionCalculator extends ActionBarActivity
         setContentView(R.layout.activity_conversion_calculator);
     }
 
+///////////////////////////////////////////////////////////////////////////////////////////////////
+    //When you hit the Conversion button all this happens!!
+///////////////////////////////////////////////////////////////////////////////////////////////////
     public void makeConversion(View view)
     {
         input = (EditText) findViewById(R.id.input);
@@ -65,6 +70,7 @@ public class ConversionCalculator extends ActionBarActivity
 
         inputNum = Double.parseDouble(input.getText().toString());
 
+        //There are a lot of if statements here:) They do all the maths for the conversions
         if (!TextUtils.isEmpty(input.getText().toString()))
         {
             //MASS AND WEIGHT
@@ -72,16 +78,23 @@ public class ConversionCalculator extends ActionBarActivity
             if(index1.equals("ounces") && index2.equals("grams")) {outputNum = inputNum * 28.3;}
             if(index1.equals("grams") && index2.equals("ounces")) {outputNum = inputNum * .0353;}
             if(index1.equals("pounds") && index2.equals("grams")) {outputNum = inputNum * 453.59;}
-            if(index1.equals("grams") && index2.equals("pounds")) {outputNum = inputNum * 0.0022046;}//broke
+            if(index1.equals("grams") && index2.equals("pounds")) {outputNum = inputNum * 0.0022046;}
             if(index1.equals("pounds") && index2.equals("ounces")) {outputNum = inputNum * 16.000;}
             if(index1.equals("ounces") && index2.equals("pounds")) {outputNum = inputNum * 0.062500;}
             if(index1.equals("milligrams") && index2.equals("grams")) {outputNum = inputNum / 1000.0;}
-            if(index1.equals("milligrams") && index2.equals("ounces")) {outputNum = inputNum * 0.000035274;}//broke
+            if(index1.equals("milligrams") && index2.equals("ounces")) {outputNum = inputNum * 0.000035274;}
             if(index1.equals("milligrams") && index2.equals("pounds")) {outputNum = inputNum * 0.000002204;}
             if(index1.equals("grams") && index2.equals("milligrams")) {outputNum = inputNum / 0.0010000;}
             if(index1.equals("ounces") && index2.equals("milligrams")) {outputNum = inputNum * 28349.523;}
             if(index1.equals("pounds") && index2.equals("milligrams")) {outputNum = inputNum * 453592;}
-
+            if(index1.equals("kilograms") && index2.equals("grams")) {outputNum = inputNum * 1000.0;}
+            if(index1.equals("kilograms") && index2.equals("ounces")) {outputNum = inputNum * 35.274;}
+            if(index1.equals("kilograms") && index2.equals("pounds")) {outputNum = inputNum * 2.20462;}
+            if(index1.equals("kilograms") && index2.equals("milligrams")) {outputNum = inputNum * 1000000;}
+            if(index1.equals("ounces") && index2.equals("kilograms")) {outputNum = inputNum * 0.0283495;}
+            if(index1.equals("pounds") && index2.equals("kilograms")) {outputNum = inputNum * 0.453592;}
+            if(index1.equals("grams") && index2.equals("kilograms")) {outputNum = inputNum * 0.001;}
+            if(index1.equals("milligrams") && index2.equals("kilograms")) {outputNum = inputNum * 0.000001;}
             //VOLUME
 
             //LENGTH
@@ -97,6 +110,9 @@ public class ConversionCalculator extends ActionBarActivity
 
     }
 
+///////////////////////////////////////////////////////////////////////////////////////////////////
+    //This is the first conversion button box:
+///////////////////////////////////////////////////////////////////////////////////////////////////
     public void firstConversion(View view)
     {
         ///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -115,12 +131,14 @@ public class ConversionCalculator extends ActionBarActivity
         final Button grams1 = new Button(ConversionCalculator.this);
         final Button pounds1 = new Button(ConversionCalculator.this);
         final Button milligrams1 = new Button(ConversionCalculator.this);
+        final Button kilograms1 = new Button (ConversionCalculator.this);
 
         //set the name to the buttons
         ounces1.setText("ounces");
         grams1.setText("grams");
         pounds1.setText("pounds");
         milligrams1.setText("milligrams");
+        kilograms1.setText("kilograms");
 
         //all the on click listeners...
         ounces1.setOnClickListener(new View.OnClickListener()
@@ -169,6 +187,18 @@ public class ConversionCalculator extends ActionBarActivity
             }
         });
 
+        kilograms1.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                ad.dismiss();
+                index1 = "kilograms";
+                itemSelect1.setText("kilograms");
+            }
+        });
+
+
         //NOW ADD THE STUFF CREATED ABOVE TO THE VIEW WITH A NEW LAYOUT
 
         layout1 = new LinearLayout(ConversionCalculator.this);
@@ -178,12 +208,16 @@ public class ConversionCalculator extends ActionBarActivity
         layout1.addView(grams1);
         layout1.addView(pounds1);
         layout1.addView(milligrams1);
+        layout1.addView(kilograms1);
         //now set the view and create it
         a.setView(layout1);
         ad = a.create();
         ad = a.show();
     }
 
+///////////////////////////////////////////////////////////////////////////////////////////////////
+    //This is the first conversion button box:
+///////////////////////////////////////////////////////////////////////////////////////////////////
     public void secondConversion(View view)
     {
         ///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -201,12 +235,14 @@ public class ConversionCalculator extends ActionBarActivity
         final Button grams2 = new Button(ConversionCalculator.this);
         final Button pounds2 = new Button(ConversionCalculator.this);
         final Button milligrams2 = new Button(ConversionCalculator.this);
+        final Button kilograms2 = new Button(ConversionCalculator.this);
 
         //set the name to the buttons
         ounces2.setText("ounces");
         grams2.setText("grams");
         pounds2.setText("pounds");
         milligrams2.setText("milligrams");
+        kilograms2.setText("kilograms");
 
         //all the on click listeners...
         ounces2.setOnClickListener(new View.OnClickListener()
@@ -253,6 +289,17 @@ public class ConversionCalculator extends ActionBarActivity
             }
         });
 
+        kilograms2.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                bd.dismiss();
+                index2 = "kilograms";
+                itemSelect2.setText("kilograms");
+            }
+        });
+
         layout2 = new LinearLayout(ConversionCalculator.this);
         layout2.setOrientation(LinearLayout.VERTICAL);
         //Add the buttons to the layout
@@ -260,6 +307,7 @@ public class ConversionCalculator extends ActionBarActivity
         layout2.addView(grams2);
         layout2.addView(pounds2);
         layout2.addView(milligrams2);
+        layout2.addView(kilograms2);
         //now set the view and create it
         b.setView(layout2);
         bd = b.create();
