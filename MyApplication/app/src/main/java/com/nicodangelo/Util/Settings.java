@@ -50,7 +50,7 @@ public class Settings extends ActionBarActivity
 
     public void launchConversionCalc(View view)
     {
-        Intent i = new Intent(this, ConversionCalculator.class);
+        Intent i = new Intent(this, ConversionCalculatorMass.class);
         startActivity(i);
     }
 

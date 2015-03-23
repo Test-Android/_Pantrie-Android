@@ -1,9 +1,7 @@
-//@author Jake Cox
-
 package com.nicodangelo.Util;
 
-
 import android.app.AlertDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.text.TextUtils;
@@ -18,7 +16,7 @@ import android.widget.Toast;
 
 import com.nicodangelo.pantrie.R;
 
-public class ConversionCalculator extends ActionBarActivity
+public class ConversionCalculatorVolume extends ActionBarActivity
 {
     //They may be not used however these are all the "Objects" in the class that are active and do things:)
     private EditText input;
@@ -34,8 +32,8 @@ public class ConversionCalculator extends ActionBarActivity
     private double outputNum = 0;
     private LinearLayout layout1;
     private LinearLayout layout2;
-    private String index1 = "grams";
-    private String index2 = "grams";
+    private String index1 = "tablespoon";
+    private String index2 = "tablespoon";
 
     //these are not used yet but are placements for later (keep these:))
     private String onceString;
@@ -61,7 +59,7 @@ public class ConversionCalculator extends ActionBarActivity
         setContentView(R.layout.activity_conversion_calculator);
     }
 
-///////////////////////////////////////////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////////////////////////////
     //When you hit the Conversion button all this happens!!
 ///////////////////////////////////////////////////////////////////////////////////////////////////
     public void makeConversion(View view)
@@ -82,34 +80,6 @@ public class ConversionCalculator extends ActionBarActivity
         //There are a lot of if statements here:) They do all the maths for the conversions
         if (!TextUtils.isEmpty(input.getText().toString()))
         {
-            //MASS AND WEIGHT
-            if(index1.equals(index2)) {outputNum = inputNum;}
-            if(index1.equals("ounces") && index2.equals("grams")) {outputNum = inputNum * 28.3;}
-            ///////////////////////////////////////////////////////////////////////////////////////////////////////////
-            if(index1.equals("grams") && index2.equals("ounces")) {outputNum = inputNum * .0353;}
-            ///////////////////////////////////////////////////////////////////////////////////////////////////////////
-            if(index1.equals("pounds") && index2.equals("grams")) {outputNum = inputNum * 453.59;}
-            if(index1.equals("grams") && index2.equals("pounds")) {outputNum = inputNum * 0.0022046;}
-            if(index1.equals("pounds") && index2.equals("ounces")) {outputNum = inputNum * 16.000;}
-            if(index1.equals("ounces") && index2.equals("pounds")) {outputNum = inputNum * 0.062500;}
-            ///////////////////////////////////////////////////////////////////////////////////////////////////////////
-            if(index1.equals("milligrams") && index2.equals("grams")) {outputNum = inputNum / 1000.0;}
-            if(index1.equals("milligrams") && index2.equals("ounces")) {outputNum = inputNum * 0.000035274;}
-            if(index1.equals("milligrams") && index2.equals("pounds")) {outputNum = inputNum * 0.000002204;}
-            ///////////////////////////////////////////////////////////////////////////////////////////////////////////
-            if(index1.equals("grams") && index2.equals("milligrams")) {outputNum = inputNum / 0.0010000;}
-            if(index1.equals("ounces") && index2.equals("milligrams")) {outputNum = inputNum * 28349.523;}
-            if(index1.equals("pounds") && index2.equals("milligrams")) {outputNum = inputNum * 453592;}
-            ///////////////////////////////////////////////////////////////////////////////////////////////////////////
-            if(index1.equals("kilograms") && index2.equals("grams")) {outputNum = inputNum * 1000.0;}
-            if(index1.equals("kilograms") && index2.equals("ounces")) {outputNum = inputNum * 35.274;}
-            if(index1.equals("kilograms") && index2.equals("pounds")) {outputNum = inputNum * 2.20462;}
-            if(index1.equals("kilograms") && index2.equals("milligrams")) {outputNum = inputNum * 1000000;}
-            if(index1.equals("ounces") && index2.equals("kilograms")) {outputNum = inputNum * 0.0283495;}
-            if(index1.equals("pounds") && index2.equals("kilograms")) {outputNum = inputNum * 0.453592;}
-            if(index1.equals("grams") && index2.equals("kilograms")) {outputNum = inputNum * 0.001;}
-            if(index1.equals("milligrams") && index2.equals("kilograms")) {outputNum = inputNum * 0.000001;}
-
             //VOLUME
             if(index1.equals(index2)) {outputNum = inputNum;}
             if(index1.equals("teaspoon") && index2.equals("tablespoon")) {outputNum = inputNum * 0.33333;}
@@ -193,20 +163,10 @@ public class ConversionCalculator extends ActionBarActivity
             if(index1.equals("quart") && index2.equals("milliliter")) {outputNum = inputNum * 946.353;}
             if(index1.equals("gallon") && index2.equals("milliliter")) {outputNum = inputNum * 3785.41;}
             ///////////////////////////////////////////////////////////////////////////////////////////////////////////
-                //liter
-                //deciliter
+            //liter
+            //deciliter
 
-            //LENGTH
-                //millimeter
-                //centimeter
-                //meter
-                //inch
-                //foot
-                //yard
-                //mile
-                //kilometer
-
-           output.setText(Double.toString(outputNum));
+            output.setText(Double.toString(outputNum));
         }
         else
         {
@@ -217,7 +177,7 @@ public class ConversionCalculator extends ActionBarActivity
 
     }
 
-///////////////////////////////////////////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////////////////////////////
     //This is the first conversion button box:
 ///////////////////////////////////////////////////////////////////////////////////////////////////
     public void firstConversion(View view)
@@ -234,95 +194,95 @@ public class ConversionCalculator extends ActionBarActivity
         a.setCancelable(false);
 
         //Create the button
-        final Button ounces1 = new Button(ConversionCalculator.this);
-        final Button grams1 = new Button(ConversionCalculator.this);
-        final Button pounds1 = new Button(ConversionCalculator.this);
-        final Button milligrams1 = new Button(ConversionCalculator.this);
-        final Button kilograms1 = new Button (ConversionCalculator.this);
+        final Button teaspoon1 = new Button(ConversionCalculatorVolume.this);
+        final Button tablespoon1 = new Button(ConversionCalculatorVolume.this);
+        final Button fluidOunce1 = new Button(ConversionCalculatorVolume.this);
+        final Button gills1 = new Button(ConversionCalculatorVolume.this);
+        final Button cups1 = new Button (ConversionCalculatorVolume.this);
 
         //set the name to the buttons
-        ounces1.setText("ounces");
-        grams1.setText("grams");
-        pounds1.setText("pounds");
-        milligrams1.setText("milligrams");
-        kilograms1.setText("kilograms");
+        teaspoon1.setText("teaspoons");
+        tablespoon1.setText("tablespoons");
+        fluidOunce1.setText("fluid ounces");
+        gills1.setText("gills");
+        cups1.setText("cups");
 
         //all the on click listeners...
-        ounces1.setOnClickListener(new View.OnClickListener()
+        teaspoon1.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v)
             {
                 ad.dismiss();
-                index1 = "ounces";
-                itemSelect1.setText("ounces");
+                index1 = "teaspoon";
+                itemSelect1.setText("teaspoons");
             }
         });
 
-        grams1.setOnClickListener(new View.OnClickListener()
+        tablespoon1.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v)
             {
                 ad.dismiss();
-                index1 = "grams";
-                itemSelect1.setText("grams");
-
-            }
-        });
-
-        pounds1.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View v)
-            {
-                ad.dismiss();
-                index1 = "pounds";
-                itemSelect1.setText("pounds");
+                index1 = "tablespoon";
+                itemSelect1.setText("tablespoons");
 
             }
         });
 
-        milligrams1.setOnClickListener(new View.OnClickListener()
+        fluidOunce1.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v)
             {
                 ad.dismiss();
-                index1 = "milligrams";
-                itemSelect1.setText("milligrams");
+                index1 = "fluid ounce";
+                itemSelect1.setText("fluid ounces");
+
             }
         });
 
-        kilograms1.setOnClickListener(new View.OnClickListener()
+        gills1.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v)
             {
                 ad.dismiss();
-                index1 = "kilograms";
-                itemSelect1.setText("kilograms");
+                index1 = "gill";
+                itemSelect1.setText("gills");
+            }
+        });
+
+        cups1.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                ad.dismiss();
+                index1 = "cup";
+                itemSelect1.setText("cups");
             }
         });
 
 
         //NOW ADD THE STUFF CREATED ABOVE TO THE VIEW WITH A NEW LAYOUT
 
-        layout1 = new LinearLayout(ConversionCalculator.this);
+        layout1 = new LinearLayout(ConversionCalculatorVolume.this);
         layout1.setOrientation(LinearLayout.VERTICAL);
         //Add the buttons to the layout
-        layout1.addView(ounces1);
-        layout1.addView(grams1);
-        layout1.addView(pounds1);
-        layout1.addView(milligrams1);
-        layout1.addView(kilograms1);
+        layout1.addView(teaspoon1);
+        layout1.addView(tablespoon1);
+        layout1.addView(fluidOunce1);
+        layout1.addView(gills1);
+        layout1.addView(cups1);
         //now set the view and create it
         a.setView(layout1);
         ad = a.create();
         ad = a.show();
     }
 
-///////////////////////////////////////////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////////////////////////////
     //This is the first conversion button box:
 ///////////////////////////////////////////////////////////////////////////////////////////////////
     public void secondConversion(View view)
@@ -338,83 +298,85 @@ public class ConversionCalculator extends ActionBarActivity
         b.setCancelable(false);
 
         //Create the button
-        final Button ounces2 = new Button(ConversionCalculator.this);
-        final Button grams2 = new Button(ConversionCalculator.this);
-        final Button pounds2 = new Button(ConversionCalculator.this);
-        final Button milligrams2 = new Button(ConversionCalculator.this);
-        final Button kilograms2 = new Button(ConversionCalculator.this);
+        final Button teaspoons2 = new Button(ConversionCalculatorVolume.this);
+        final Button tablespoons2 = new Button(ConversionCalculatorVolume.this);
+        final Button fluidOunces2 = new Button(ConversionCalculatorVolume.this);
+        final Button gills2 = new Button(ConversionCalculatorVolume.this);
+        final Button cups2 = new Button(ConversionCalculatorVolume.this);
 
         //set the name to the buttons
-        ounces2.setText("ounces");
-        grams2.setText("grams");
-        pounds2.setText("pounds");
-        milligrams2.setText("milligrams");
-        kilograms2.setText("kilograms");
+        teaspoons2.setText("teaspoons");
+        tablespoons2.setText("tablespoons");
+        fluidOunces2.setText("fluid ounces");
+        gills2.setText("gills");
+        cups2.setText("cups");
 
         //all the on click listeners...
-        ounces2.setOnClickListener(new View.OnClickListener()
+        teaspoons2.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v)
             {
                 bd.dismiss();
-                index2 = "ounces";
-                itemSelect2.setText("ounces");
+                index2 = "teaspoon";
+                itemSelect2.setText("teaspoons");
             }
         });
 
-        grams2.setOnClickListener(new View.OnClickListener()
+        tablespoons2.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v)
             {
                 bd.dismiss();
-                index2 = "grams";
-                itemSelect2.setText("grams");
+                index2 = "tablespoon";
+                itemSelect2.setText("tablespoons");
+
             }
         });
 
-        pounds2.setOnClickListener(new View.OnClickListener()
+        fluidOunces2.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v)
             {
                 bd.dismiss();
-                index2 = "pounds";
-                itemSelect2.setText("pounds");
+                index2 = "fluid ounce";
+                itemSelect2.setText("fluid ounces");
+
             }
         });
 
-        milligrams2.setOnClickListener(new View.OnClickListener()
+        gills2.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v)
             {
                 bd.dismiss();
-                index2 = "milligrams";
-                itemSelect2.setText("milligrams");
+                index2 = "gill";
+                itemSelect2.setText("gills");
             }
         });
 
-        kilograms2.setOnClickListener(new View.OnClickListener()
+        cups2.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v)
             {
                 bd.dismiss();
-                index2 = "kilograms";
-                itemSelect2.setText("kilograms");
+                index2 = "cup";
+                itemSelect2.setText("cups");
             }
         });
 
-        layout2 = new LinearLayout(ConversionCalculator.this);
+        layout2 = new LinearLayout(ConversionCalculatorVolume.this);
         layout2.setOrientation(LinearLayout.VERTICAL);
         //Add the buttons to the layout
-        layout2.addView(ounces2);
-        layout2.addView(grams2);
-        layout2.addView(pounds2);
-        layout2.addView(milligrams2);
-        layout2.addView(kilograms2);
+        layout2.addView(teaspoons2);
+        layout2.addView(tablespoons2);
+        layout2.addView(fluidOunces2);
+        layout2.addView(gills2);
+        layout2.addView(cups2);
         //now set the view and create it
         b.setView(layout2);
         bd = b.create();
@@ -439,6 +401,8 @@ public class ConversionCalculator extends ActionBarActivity
         //noinspection SimplifiableIfStatement
         if (id == R.id.volume)
         {
+            Intent i = new Intent(this, ConversionCalculatorMass.class);
+            startActivity(i);
             return true;
         }
         else if(id == R.id.length)

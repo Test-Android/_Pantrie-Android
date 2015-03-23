@@ -25,4 +25,5 @@
     <string name="title_activity_conversion_calculator">ConversionCalculator</string>
     <string name="action_add_items">Add Item</string>
     <string name="hello_world">Hello world!</string>
+    <string name="title_activity_conversion_calculator_volume">ConversionCalculatorVolume</string>
 </resources>
