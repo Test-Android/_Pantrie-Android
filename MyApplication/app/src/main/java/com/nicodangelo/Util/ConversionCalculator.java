@@ -424,6 +424,7 @@ public class ConversionCalculator extends ActionBarActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu)
     {
+        getMenuInflater().inflate(R.menu.menu_conversion_calculator, menu);
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -436,7 +437,15 @@ public class ConversionCalculator extends ActionBarActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings)
+        if (id == R.id.volume)
+        {
+            return true;
+        }
+        else if(id == R.id.length)
+        {
+            return true;
+        }
+        else if(id == R.id.mass)
         {
             return true;
         }
