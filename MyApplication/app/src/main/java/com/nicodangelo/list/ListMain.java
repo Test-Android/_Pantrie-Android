@@ -5,8 +5,10 @@ import com.nicodangelo.Util.Settings;
 import com.nicodangelo.item.ItemController;
 import com.nicodangelo.pantrie.R;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.FragmentTransaction;
 import android.app.ListActivity;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -36,6 +38,7 @@ import static com.nicodangelo.pantrie.R.layout.activity_list_main;
 
 public class ListMain extends ActionBarActivity
 {
+
     ArrayList<String> list = new ArrayList<String>();
     ArrayAdapter<String> adapter;
     ItemController itemList = new ItemController();
@@ -44,11 +47,10 @@ public class ListMain extends ActionBarActivity
     Boolean paused = false;
 
     @Override
-    public void onCreate(Bundle savedInstanceState)
+    public void onCreate(Bundle bundle)
     {
-        super.onCreate(savedInstanceState);
-        setContentView(activity_list_main);
-
+        super.onCreate(bundle);
+        setContentView(R.layout.activity_list_main);
 
         Button btn = (Button) findViewById(R.id.btnAdd);
         adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, list);
@@ -172,9 +174,7 @@ public class ListMain extends ActionBarActivity
                         ab.create();
                         ab.show();
                     }
-
-                }
-            }
+                }    }
         });
     }
 
