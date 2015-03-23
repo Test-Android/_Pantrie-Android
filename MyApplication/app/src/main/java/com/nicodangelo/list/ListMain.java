@@ -49,34 +49,7 @@ public class ListMain extends ActionBarActivity
         super.onCreate(savedInstanceState);
         setContentView(activity_list_main);
 
-        File temp = getCacheDir();
-        String state = "";
-        try
-        {
-            FileInputStream fs = new FileInputStream(temp);
-            int c;
-            while((c = fs.read()) != -1)
-                state = state + ((char)c);
-            fs.close();
-            if(state.equals("true"))
-            {
-                System.out.print(state);
-                for(int k = 0; k < itemList.getSpot(); k++)
-                {
-                    list.add(itemList.getName(k));
-                    System.out.print(itemList.getName(k));
-                }
-                curSize = itemList.getSpot();
-                FileOutputStream fo = new FileOutputStream(temp);
-                fo.write(("false").getBytes());
-                fo.close();
-                itemList.printAll();
-            }
-        }
-        catch(Exception e)
-        {
-            e.printStackTrace();
-        }
+
         Button btn = (Button) findViewById(R.id.btnAdd);
         adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, list);
 
@@ -158,13 +131,13 @@ public class ListMain extends ActionBarActivity
                                     public void onClick(DialogInterface dialog, int which)
                                     {
                                         AlertDialog.Builder builder = new AlertDialog.Builder(ListMain.this);
-                                        builder.setTitle("Create New Item");
+                                        builder.setTitle("Create New Item: All Fields Required");
                                         final EditText name = new EditText(ListMain.this);
-                                        name.setHint("Name of item (required)");
+                                        name.setHint("Name of item");
                                         final EditText amount = new EditText(ListMain.this);
-                                        amount.setHint("Amount of items(Not Required)");
+                                        amount.setHint("Amount of items");
                                         final EditText setLow = new EditText(ListMain.this);
-                                        setLow.setHint("Set Low Amount(Not Required)");
+                                        setLow.setHint("Set Low Amount");
 
 
                                         name.setInputType(InputType.TYPE_CLASS_TEXT);
@@ -218,7 +191,6 @@ public class ListMain extends ActionBarActivity
     {
         getMenuInflater().inflate(R.menu.menu_add_item, menu);
         getMenuInflater().inflate(R.menu.menu_settings, menu);
-        getMenuInflater().inflate(R.menu.menu_edit_list, menu);
         return true;
     }
     @Override
