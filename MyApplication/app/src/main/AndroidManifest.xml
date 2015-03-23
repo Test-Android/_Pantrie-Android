@@ -39,21 +39,12 @@
             android:label="@string/title_activity_settings" >
         </activity>
         <activity
-<<<<<<< HEAD
-            android:name="com.nicodangelo.Util.ConversionCalculator"
-            android:label="@string/title_activity_conversion_calculator">
-        </activity>
-        <activity
             android:name="com.nicodangelo.list.ListAdapter"
             android:label="@string/title_activity_list_adapter">
-=======
-
+        </activity>
+        <activity
             android:name="com.nicodangelo.Util.ConversionCalculator"
             android:label="@string/title_activity_conversion_calculator" >
-
-            android:name="com.nicodangelo.list.ListAdapter"
-            android:label="@string/title_activity_list_adapter" >
->>>>>>> origin/master
         </activity>
     </application>
 
