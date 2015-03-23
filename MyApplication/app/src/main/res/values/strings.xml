@@ -22,7 +22,8 @@
     <string name="newPasswordString">Password</string>
     <string name="confirmPasswordString">Confirm Password</string>
     <string name="createAccountButtonString">Create Account</string>
-    <string name="title_activity_conversion_calculator">ConversionCalculator</string>
+    <string name="title_activity_conversion_calculator_mass">ConversionCalculatorMass</string>
     <string name="action_add_items">Add Item</string>
     <string name="hello_world">Hello world!</string>
+    <string name="title_activity_conversion_calculator_volume">ConversionCalculatorMass</string>
 </resources>

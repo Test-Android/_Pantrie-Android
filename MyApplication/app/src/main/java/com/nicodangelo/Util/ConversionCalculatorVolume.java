@@ -56,7 +56,7 @@ public class ConversionCalculatorVolume extends ActionBarActivity
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_conversion_calculator);
+        setContentView(R.layout.activity_conversion_calculator_volume);
     }
 
     ///////////////////////////////////////////////////////////////////////////////////////////////////
