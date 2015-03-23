@@ -37,6 +37,14 @@ public class MainPantrie extends ActionBarActivity
         Parse.enableLocalDatastore(this);
         Parse.initialize(this, "jGe97HPLspW4X6OfjyP3sHGiiPNvwobOJmoD86AP", "N14XxGfjhENApWZ9LyLBVxG1z09yrZxMUrdTf5IF");
         ///////////////////////////////////////////////////////////////////////////////////////////
+
+        ParseUser currentUser = ParseUser.getCurrentUser();
+        if (currentUser != null) {
+            Intent i = new Intent(this, ListMain.class);
+            startActivity(i);
+        } else {
+            // show the signup or login screen
+        }
     }
 
     public void logIn(View view)

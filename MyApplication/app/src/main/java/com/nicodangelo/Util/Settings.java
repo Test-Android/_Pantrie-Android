@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.nicodangelo.pantrie.R;
+import com.parse.ParseUser;
 
 public class Settings extends ActionBarActivity
 {
@@ -51,5 +52,11 @@ public class Settings extends ActionBarActivity
     {
         Intent i = new Intent(this, ConversionCalculator.class);
         startActivity(i);
+    }
+
+    public void signOut()
+    {
+        ParseUser.logOut();
+        ParseUser currentUser = ParseUser.getCurrentUser(); // this will now be null
     }
 }

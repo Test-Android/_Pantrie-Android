@@ -1,3 +1,5 @@
+//@author Jett Kasper
+
 package com.nicodangelo.list;
 
 import android.content.Intent;

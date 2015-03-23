@@ -1,3 +1,5 @@
+//@author Jake Cox
+
 package com.nicodangelo.pantrie;
 
 import android.content.Intent;
