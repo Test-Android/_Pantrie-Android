@@ -53,7 +53,6 @@ public class ConversionCalculatorVolume extends ActionBarActivity
     private String literString;
     private String deciliter;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
