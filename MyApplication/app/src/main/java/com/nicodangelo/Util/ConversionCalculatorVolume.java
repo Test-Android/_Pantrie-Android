@@ -50,6 +50,8 @@ public class ConversionCalculatorVolume extends ActionBarActivity
     private String quartString;
     private String gallonString;
     private String milliliterString;
+    private String literString;
+    private String deciliter;
 
 
     @Override
@@ -163,8 +165,45 @@ public class ConversionCalculatorVolume extends ActionBarActivity
             if(index1.equals("quart") && index2.equals("milliliter")) {outputNum = inputNum * 946.353;}
             if(index1.equals("gallon") && index2.equals("milliliter")) {outputNum = inputNum * 3785.41;}
             ///////////////////////////////////////////////////////////////////////////////////////////////////////////
-            //liter
-            //deciliter
+            if(index1.equals("liter") && index2.equals("teaspoon")) {outputNum = inputNum * 202.884;}
+            if(index1.equals("liter") && index2.equals("tablespoon")) {outputNum = inputNum * 67.628;}
+            if(index1.equals("liter") && index2.equals("fluid ounce")) {outputNum = inputNum * 33.814;}
+            if(index1.equals("liter") && index2.equals("gill")) {outputNum = inputNum * 8.45350568;}
+            if(index1.equals("liter") && index2.equals("cup")) {outputNum = inputNum * 4.22675;}
+            if(index1.equals("liter") && index2.equals("pint")) {outputNum = inputNum * 2.11338;}
+            if(index1.equals("liter") && index2.equals("quart")) {outputNum = inputNum * 1.05669;}
+            if(index1.equals("liter") && index2.equals("gallon")) {outputNum = inputNum * 0.264172;}
+            if(index1.equals("liter") && index2.equals("milliliter")) {outputNum = inputNum * 1000;}
+            if(index1.equals("teaspoon") && index2.equals("liter")) {outputNum = inputNum * 0.00492892;}
+            if(index1.equals("tablespoon") && index2.equals("liter")) {outputNum = inputNum * 0.0147868;}
+            if(index1.equals("fluid ounce") && index2.equals("liter")) {outputNum = inputNum * 0.0295735;}
+            if(index1.equals("gill") && index2.equals("liter")) {outputNum = inputNum * 0.118294118;}
+            if(index1.equals("cup") && index2.equals("liter")) {outputNum = inputNum * 0.236588;}
+            if(index1.equals("pint") && index2.equals("liter")) {outputNum = inputNum * 0.473176;}
+            if(index1.equals("quart") && index2.equals("liter")) {outputNum = inputNum * 0.946353;}
+            if(index1.equals("gallon") && index2.equals("liter")) {outputNum = inputNum * 3.78541;}
+            if(index1.equals("milliliter") && index2.equals("liter")) {outputNum = inputNum * 0.001;}
+            ///////////////////////////////////////////////////////////////////////////////////////////////////////////
+            if(index1.equals("deciliter") && index2.equals("teaspoon")) {outputNum = inputNum * 20.2884136;}
+            if(index1.equals("deciliter") && index2.equals("tablespoon")) {outputNum = inputNum * 6.76280454;}
+            if(index1.equals("deciliter") && index2.equals("fluid ounce")) {outputNum = inputNum * 3.38140227;}
+            if(index1.equals("deciliter") && index2.equals("gill")) {outputNum = inputNum * 0.845350568;}
+            if(index1.equals("deciliter") && index2.equals("cup")) {outputNum = inputNum * 0.422675284;}
+            if(index1.equals("deciliter") && index2.equals("pint")) {outputNum = inputNum * 0.211337642;}
+            if(index1.equals("deciliter") && index2.equals("quart")) {outputNum = inputNum * 0.105668821;}
+            if(index1.equals("deciliter") && index2.equals("gallon")) {outputNum = inputNum * 0.0264172052;}
+            if(index1.equals("deciliter") && index2.equals("milliliter")) {outputNum = inputNum * 100;}
+            if(index1.equals("deciliter") && index2.equals("liter")) {outputNum = inputNum * 0.1;}
+            if(index1.equals("teaspoon") && index2.equals("deciliter")) {outputNum = inputNum * 0.0492892159;}
+            if(index1.equals("tablespoon") && index2.equals("deciliter")) {outputNum = inputNum * 0.147867648;}
+            if(index1.equals("fluid ounce") && index2.equals("deciliter")) {outputNum = inputNum * 0.295735296;}
+            if(index1.equals("gill") && index2.equals("deciliter")) {outputNum = inputNum * 1.18294118;}
+            if(index1.equals("cup") && index2.equals("deciliter")) {outputNum = inputNum * 2.36588237;}
+            if(index1.equals("pint") && index2.equals("deciliter")) {outputNum = inputNum * 4.73176473;}
+            if(index1.equals("quart") && index2.equals("deciliter")) {outputNum = inputNum * 9.46352946;}
+            if(index1.equals("gallon") && index2.equals("deciliter")) {outputNum = inputNum * 37.8541178;}
+            if(index1.equals("milliliter") && index2.equals("deciliter")) {outputNum = inputNum * 0.01;}
+            if(index1.equals("liter") && index2.equals("deciliter")) {outputNum = inputNum * 10;}
 
             output.setText(Double.toString(outputNum));
         }
@@ -173,9 +212,6 @@ public class ConversionCalculatorVolume extends ActionBarActivity
             Toast toast = Toast.makeText(getApplicationContext(), "Try Again... please", Toast.LENGTH_SHORT);
             toast.show();
         }
-
-
-
     }
 
     ///////////////////////////////////////////////////////////////////////////////////////////////////
