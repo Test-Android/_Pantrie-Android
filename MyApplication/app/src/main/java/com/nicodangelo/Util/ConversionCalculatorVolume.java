@@ -235,6 +235,12 @@ public class ConversionCalculatorVolume extends ActionBarActivity
         final Button fluidOunce1 = new Button(ConversionCalculatorVolume.this);
         final Button gills1 = new Button(ConversionCalculatorVolume.this);
         final Button cups1 = new Button (ConversionCalculatorVolume.this);
+        final Button pint1 = new Button (ConversionCalculatorVolume.this);
+        final Button quart1 = new Button (ConversionCalculatorVolume.this);
+        final Button gallon1 = new Button (ConversionCalculatorVolume.this);
+        final Button milliliter1 = new Button (ConversionCalculatorVolume.this);
+        final Button liter1 = new Button (ConversionCalculatorVolume.this);
+        final Button deciliter1 = new Button (ConversionCalculatorVolume.this);
 
         //set the name to the buttons
         teaspoon1.setText("teaspoons");
@@ -242,6 +248,14 @@ public class ConversionCalculatorVolume extends ActionBarActivity
         fluidOunce1.setText("fluid ounces");
         gills1.setText("gills");
         cups1.setText("cups");
+        pint1.setText("pints");
+        quart1.setText("quarts");
+        gallon1.setText("gallons");
+        liter1.setText("liters");
+        milliliter1.setText("milliliters");
+        liter1.setText("liters");
+        deciliter1.setText("deciliters");
+
 
         //all the on click listeners...
         teaspoon1.setOnClickListener(new View.OnClickListener()
@@ -300,6 +314,65 @@ public class ConversionCalculatorVolume extends ActionBarActivity
                 itemSelect1.setText("cups");
             }
         });
+        pint1.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                ad.dismiss();
+                index1 = "pint";
+                itemSelect1.setText("pints");
+            }
+        });
+        quart1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ad.dismiss();
+                index1 = "quart";
+                itemSelect1.setText("quarts");
+            }
+        });
+        gallon1.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                ad.dismiss();
+                index1 = "gallon";
+                itemSelect1.setText("gallons");
+            }
+        });
+        milliliter1.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                ad.dismiss();
+                index1 = "milliliter";
+                itemSelect1.setText("milliliters");
+            }
+        });
+        liter1.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                ad.dismiss();
+                index1 = "liter";
+                itemSelect1.setText("liters");
+            }
+        });
+        deciliter1.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                ad.dismiss();
+                index1 = "deciliter";
+                itemSelect1.setText("deciliters");
+            }
+        });
+
 
 
         //NOW ADD THE STUFF CREATED ABOVE TO THE VIEW WITH A NEW LAYOUT
@@ -312,6 +385,12 @@ public class ConversionCalculatorVolume extends ActionBarActivity
         layout1.addView(fluidOunce1);
         layout1.addView(gills1);
         layout1.addView(cups1);
+        layout1.addView(pint1);
+        layout1.addView(quart1);
+        layout1.addView(gallon1);
+        layout1.addView(milliliter1);
+        layout1.addView(liter1);
+        layout1.addView(deciliter1);
         //now set the view and create it
         a.setView(layout1);
         ad = a.create();
@@ -339,6 +418,12 @@ public class ConversionCalculatorVolume extends ActionBarActivity
         final Button fluidOunces2 = new Button(ConversionCalculatorVolume.this);
         final Button gills2 = new Button(ConversionCalculatorVolume.this);
         final Button cups2 = new Button(ConversionCalculatorVolume.this);
+        final Button pint2 = new Button (ConversionCalculatorVolume.this);
+        final Button quart2 = new Button (ConversionCalculatorVolume.this);
+        final Button gallon2 = new Button (ConversionCalculatorVolume.this);
+        final Button milliliter2 = new Button (ConversionCalculatorVolume.this);
+        final Button liter2 = new Button (ConversionCalculatorVolume.this);
+        final Button deciliter2 = new Button (ConversionCalculatorVolume.this);
 
         //set the name to the buttons
         teaspoons2.setText("teaspoons");
@@ -346,6 +431,13 @@ public class ConversionCalculatorVolume extends ActionBarActivity
         fluidOunces2.setText("fluid ounces");
         gills2.setText("gills");
         cups2.setText("cups");
+        pint2.setText("pints");
+        quart2.setText("quarts");
+        gallon2.setText("gallons");
+        liter2.setText("liters");
+        milliliter2.setText("milliliters");
+        liter2.setText("liters");
+        deciliter2.setText("deciliters");
 
         //all the on click listeners...
         teaspoons2.setOnClickListener(new View.OnClickListener()
@@ -404,6 +496,64 @@ public class ConversionCalculatorVolume extends ActionBarActivity
                 itemSelect2.setText("cups");
             }
         });
+        pint2.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                bd.dismiss();
+                index2 = "pint";
+                itemSelect2.setText("pints");
+            }
+        });
+        quart2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                bd.dismiss();
+                index2 = "quart";
+                itemSelect2.setText("quarts");
+            }
+        });
+        gallon2.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                bd.dismiss();
+                index2 = "gallon";
+                itemSelect2.setText("gallons");
+            }
+        });
+        milliliter2.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                bd.dismiss();
+                index2 = "milliliter";
+                itemSelect2.setText("milliliters");
+            }
+        });
+        liter2.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                bd.dismiss();
+                index2 = "liter";
+                itemSelect2.setText("liters");
+            }
+        });
+        deciliter2.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                bd.dismiss();
+                index2 = "deciliter";
+                itemSelect2.setText("deciliters");
+            }
+        });
 
         layout2 = new LinearLayout(ConversionCalculatorVolume.this);
         layout2.setOrientation(LinearLayout.VERTICAL);
@@ -413,6 +563,12 @@ public class ConversionCalculatorVolume extends ActionBarActivity
         layout2.addView(fluidOunces2);
         layout2.addView(gills2);
         layout2.addView(cups2);
+        layout2.addView(pint2);
+        layout2.addView(quart2);
+        layout2.addView(gallon2);
+        layout2.addView(milliliter2);
+        layout2.addView(liter2);
+        layout2.addView(deciliter2);
         //now set the view and create it
         b.setView(layout2);
         bd = b.create();
