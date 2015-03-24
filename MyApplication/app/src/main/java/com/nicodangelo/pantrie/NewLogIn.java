@@ -33,6 +33,8 @@ public class NewLogIn extends ActionBarActivity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_log_in);
+        android.support.v7.app.ActionBar actionBar = getSupportActionBar();
+        actionBar.setTitle("New User");
     }
 
     public void createNewAccount(View view)

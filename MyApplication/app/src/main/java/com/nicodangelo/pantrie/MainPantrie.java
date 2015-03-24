@@ -31,6 +31,8 @@ public class MainPantrie extends ActionBarActivity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_pantrie);
+        android.support.v7.app.ActionBar actionBar = getSupportActionBar();
+        actionBar.setTitle("Home");
 
         ///////////////////////////////////////////////////////////////////////////////////////////
         // Enable Local Datastore, and make a Test Parse Object!

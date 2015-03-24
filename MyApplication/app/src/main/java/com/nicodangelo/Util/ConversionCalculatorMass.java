@@ -6,6 +6,7 @@ package com.nicodangelo.Util;
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.text.TextUtils;
 import android.view.Menu;
@@ -60,6 +61,8 @@ public class ConversionCalculatorMass extends ActionBarActivity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_conversion_calculator);
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setTitle("Mass");
     }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////

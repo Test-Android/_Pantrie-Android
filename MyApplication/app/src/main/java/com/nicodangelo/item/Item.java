@@ -2,7 +2,8 @@ package com.nicodangelo.item;
 
 //version 1.0
 
-public class Item {
+public class Item
+{
 	String itemName;
 	int amountOfItem;
 	int warnLow;

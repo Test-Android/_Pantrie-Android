@@ -51,6 +51,8 @@ public class ListMain extends ActionBarActivity
     {
         super.onCreate(bundle);
         setContentView(R.layout.activity_list_main);
+        android.support.v7.app.ActionBar actionBar = getSupportActionBar();
+        actionBar.setTitle("List");
 
         Button btn = (Button) findViewById(R.id.btnAdd);
         adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, list);
@@ -196,12 +198,8 @@ public class ListMain extends ActionBarActivity
     @Override
     public boolean onOptionsItemSelected(MenuItem item)
     {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
+        
         if(id == R.id.action_settings)
         {
             Intent i = new Intent(this, Settings.class);

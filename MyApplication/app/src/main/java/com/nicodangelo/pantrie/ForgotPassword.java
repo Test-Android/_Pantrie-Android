@@ -26,6 +26,8 @@ public class ForgotPassword extends ActionBarActivity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_forgot_password);
+        android.support.v7.app.ActionBar actionBar = getSupportActionBar();
+        actionBar.setTitle("Forgot Password");
     }
 
     public void resetPassword(View view)
