@@ -11,28 +11,28 @@ public class Item
 	String type;
 	String measurement;
 	
-	public SolidItems(String name, int amount, int low)
+	public Item(String name, int amount, int low)
 	{
 		itemName = name;
 		amountOfItem = amount;
 		warnLow = low;
 	}
    
-   public SolidItems(String name, int amount)
+   	public Item(String name, int amount)
 	{
 		itemName = name;
 		amountOfItem = amount;
 		warnLow = 0;
 	}
    
-   public SolidItems(String name)
+   	public Item(String name)
 	{
 		itemName = name;
 		amountOfItem = 0;
 		warnLow = 0;
 	}
 	
-	public SolidItems()
+	public Item()
 	{
 		itemName = "";
 		amountOfItem = 0;
@@ -47,7 +47,7 @@ public class Item
 	{
 		return amountOfItem;
 	}
-    public int getLow()
+    	public int getLow()
 	{
 		return warnLow;
 	}
@@ -90,11 +90,11 @@ public class Item
 	{
 		type = s;
 	}
-    public String getInfo()
-    {
+    	public String getInfo()
+    	{
         if(amountOfItem != 0)
             return itemName + " " + amountOfItem;
         return itemName;
-    }
+    	}
 
 }
