@@ -8,35 +8,36 @@ public class Item
 	int amountOfItem;
 	int warnLow;
 	boolean isSelected = false;
+	String type;
+	String measurement;
 	
-	public Item(String name, int amount, int low)
+	public SolidItems(String name, int amount, int low)
 	{
 		itemName = name;
 		amountOfItem = amount;
 		warnLow = low;
 	}
    
-   public Item(String name, int amount)
+   public SolidItems(String name, int amount)
 	{
 		itemName = name;
 		amountOfItem = amount;
 		warnLow = 0;
 	}
    
-   public Item(String name)
+   public SolidItems(String name)
 	{
 		itemName = name;
 		amountOfItem = 0;
 		warnLow = 0;
 	}
 	
-	public Item()
+	public SolidItems()
 	{
 		itemName = "";
 		amountOfItem = 0;
 		warnLow = 0;
-   }
-	
+	}
 	public String getName()
 	{
 		return itemName;
@@ -46,7 +47,22 @@ public class Item
 	{
 		return amountOfItem;
 	}
-	
+    public int getLow()
+	{
+		return warnLow;
+	}
+	public boolean getSelected()
+	{
+		return isSelected;
+	}
+	public String getMeasurment()
+	{
+		return measurement;
+	}
+	public String getType()
+	{
+		return type;
+	}
 	public void setName(String name)
 	{
 		itemName = name;
@@ -57,37 +73,28 @@ public class Item
 		amountOfItem = newAmount;
 	}
    
-    public int getLow()
-	{
-		return warnLow;
-	}
-	
 	public void setLow(int low)
 	{
 		warnLow = low;
-	}
-
-	public boolean getSelected()
-	{
-		return isSelected;
 	}
 
 	public void setSelected(boolean stuff)
 	{
 		isSelected = stuff;
 	}
-
-    public String toString()
+	public void setMeasurement(String s)
+	{
+		measurement = s;
+	}
+	public void setType(String s)
+	{
+		type = s;
+	}
+    public String getInfo()
     {
-
         if(amountOfItem != 0)
             return itemName + " " + amountOfItem;
         return itemName;
     }
 
-
-	
-
-	
-   
 }
