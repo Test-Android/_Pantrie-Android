@@ -88,31 +88,31 @@ public class ConversionCalculatorMass extends ActionBarActivity
         {
             //MASS AND WEIGHT
             if(index1.equals(index2)) {outputNum = inputNum;}
-            if(index1.equals("ounces") && index2.equals("grams")) {outputNum = inputNum * 28.3;}
+            else if(index1.equals("ounces") && index2.equals("grams")) {outputNum = inputNum * 28.3;} 
             ///////////////////////////////////////////////////////////////////////////////////////////////////////////
-            if(index1.equals("grams") && index2.equals("ounces")) {outputNum = inputNum * .0353;}
+            else if(index1.equals("grams") && index2.equals("ounces")) {outputNum = inputNum * .0353;} 
             ///////////////////////////////////////////////////////////////////////////////////////////////////////////
-            if(index1.equals("pounds") && index2.equals("grams")) {outputNum = inputNum * 453.59;}
-            if(index1.equals("grams") && index2.equals("pounds")) {outputNum = inputNum * 0.0022046;}
-            if(index1.equals("pounds") && index2.equals("ounces")) {outputNum = inputNum * 16.000;}
-            if(index1.equals("ounces") && index2.equals("pounds")) {outputNum = inputNum * 0.062500;}
+            else if(index1.equals("pounds") && index2.equals("grams")) {outputNum = inputNum * 453.59;}
+            else if(index1.equals("grams") && index2.equals("pounds")) {outputNum = inputNum * 0.0022046;}
+            else (index1.equals("pounds") && index2.equals("ounces")) {outputNum = inputNum * 16.000;}
+            else if(index1.equals("ounces") && index2.equals("pounds")) {outputNum = inputNum * 0.062500;}
             ///////////////////////////////////////////////////////////////////////////////////////////////////////////
-            if(index1.equals("milligrams") && index2.equals("grams")) {outputNum = inputNum / 1000.0;}
-            if(index1.equals("milligrams") && index2.equals("ounces")) {outputNum = inputNum * 0.000035274;}
-            if(index1.equals("milligrams") && index2.equals("pounds")) {outputNum = inputNum * 0.000002204;}
+            else if(index1.equals("milligrams") && index2.equals("grams")) {outputNum = inputNum / 1000.0;}
+            else if(index1.equals("milligrams") && index2.equals("ounces")) {outputNum = inputNum * 0.000035274;}
+            else if(index1.equals("milligrams") && index2.equals("pounds")) {outputNum = inputNum * 0.000002204;}
             ///////////////////////////////////////////////////////////////////////////////////////////////////////////
-            if(index1.equals("grams") && index2.equals("milligrams")) {outputNum = inputNum / 0.0010000;}
-            if(index1.equals("ounces") && index2.equals("milligrams")) {outputNum = inputNum * 28349.523;}
-            if(index1.equals("pounds") && index2.equals("milligrams")) {outputNum = inputNum * 453592;}
+            else if(index1.equals("grams") && index2.equals("milligrams")) {outputNum = inputNum / 0.0010000;}
+            else if(index1.equals("ounces") && index2.equals("milligrams")) {outputNum = inputNum * 28349.523;}
+            else if(index1.equals("pounds") && index2.equals("milligrams")) {outputNum = inputNum * 453592;}
             ///////////////////////////////////////////////////////////////////////////////////////////////////////////
-            if(index1.equals("kilograms") && index2.equals("grams")) {outputNum = inputNum * 1000.0;}
-            if(index1.equals("kilograms") && index2.equals("ounces")) {outputNum = inputNum * 35.274;}
-            if(index1.equals("kilograms") && index2.equals("pounds")) {outputNum = inputNum * 2.20462;}
-            if(index1.equals("kilograms") && index2.equals("milligrams")) {outputNum = inputNum * 1000000;}
-            if(index1.equals("ounces") && index2.equals("kilograms")) {outputNum = inputNum * 0.0283495;}
-            if(index1.equals("pounds") && index2.equals("kilograms")) {outputNum = inputNum * 0.453592;}
-            if(index1.equals("grams") && index2.equals("kilograms")) {outputNum = inputNum * 0.001;}
-            if(index1.equals("milligrams") && index2.equals("kilograms")) {outputNum = inputNum * 0.000001;}
+            else if(index1.equals("kilograms") && index2.equals("grams")) {outputNum = inputNum * 1000.0;}
+            else if(index1.equals("kilograms") && index2.equals("ounces")) {outputNum = inputNum * 35.274;}
+            else if(index1.equals("kilograms") && index2.equals("pounds")) {outputNum = inputNum * 2.20462;}
+            else if(index1.equals("kilograms") && index2.equals("milligrams")) {outputNum = inputNum * 1000000;}
+            else if(index1.equals("ounces") && index2.equals("kilograms")) {outputNum = inputNum * 0.0283495;}
+            else if(index1.equals("pounds") && index2.equals("kilograms")) {outputNum = inputNum * 0.453592;}
+            else if(index1.equals("grams") && index2.equals("kilograms")) {outputNum = inputNum * 0.001;}
+            else if(index1.equals("milligrams") && index2.equals("kilograms")) {outputNum = inputNum * 0.000001;}
 
 
             //LENGTH
