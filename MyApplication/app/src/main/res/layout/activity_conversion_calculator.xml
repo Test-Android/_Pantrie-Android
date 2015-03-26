@@ -28,7 +28,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New Button"
+        android:text="choose a type"
         android:id="@+id/itemSelect1"
         android:layout_below="@+id/input"
         android:layout_centerHorizontal="true"
@@ -37,7 +37,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="new button"
+        android:text="result type"
         android:id="@+id/itemSelect2"
         android:layout_below="@+id/output"
         android:layout_centerHorizontal="true"
