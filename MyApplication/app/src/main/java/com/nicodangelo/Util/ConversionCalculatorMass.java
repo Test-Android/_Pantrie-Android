@@ -94,7 +94,7 @@ public class ConversionCalculatorMass extends ActionBarActivity
             ///////////////////////////////////////////////////////////////////////////////////////////////////////////
             else if(index1.equals("pounds") && index2.equals("grams")) {outputNum = inputNum * 453.59;}
             else if(index1.equals("grams") && index2.equals("pounds")) {outputNum = inputNum * 0.0022046;}
-            else (index1.equals("pounds") && index2.equals("ounces")) {outputNum = inputNum * 16.000;}
+            else if (index1.equals("pounds") && index2.equals("ounces")) {outputNum = inputNum * 16.000;}
             else if(index1.equals("ounces") && index2.equals("pounds")) {outputNum = inputNum * 0.062500;}
             ///////////////////////////////////////////////////////////////////////////////////////////////////////////
             else if(index1.equals("milligrams") && index2.equals("grams")) {outputNum = inputNum / 1000.0;}
