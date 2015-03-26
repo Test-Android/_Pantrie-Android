@@ -26,8 +26,4 @@
     <string name="action_add_items">Add Item</string>
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_conversion_calculator_volume">ConversionCalculatorMass</string>
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="ItemNameString">Item Name</string>
-    <string name="itemAmountString">Item Amount</string>
-    <string name="lowItemAmountString">Low Amount</string>
 </resources>
