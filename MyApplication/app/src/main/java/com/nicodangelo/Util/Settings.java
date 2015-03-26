@@ -1,6 +1,6 @@
 //@author Jake Cox
 
-package com.nicodangelo.Util;
+package com.nicodangelo.util;
 
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
@@ -54,7 +54,7 @@ public class Settings extends ActionBarActivity
         startActivity(i);
     }
 
-    public void signOut()
+    public void signOut(View view)
     {
         ParseUser.logOut();
         ParseUser currentUser = ParseUser.getCurrentUser(); // this will now be null

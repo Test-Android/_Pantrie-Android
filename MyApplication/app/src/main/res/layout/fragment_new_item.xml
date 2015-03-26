@@ -60,11 +60,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-<<<<<<< HEAD
-        android:text="Why"
-=======
         android:text="i"
->>>>>>> origin/master
         android:id="@+id/questionButton"
         android:layout_marginLeft="41dp"
         android:layout_marginStart="41dp"

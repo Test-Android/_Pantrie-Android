@@ -1,15 +1,11 @@
 // @Author Jett Kaspar
 package com.nicodangelo.list;
 
-import com.nicodangelo.Util.Settings;
+import com.nicodangelo.util.Settings;
 import com.nicodangelo.item.ItemController;
 import com.nicodangelo.pantrie.R;
 
-import android.app.ActionBar;
-import android.app.Activity;
 import android.app.AlertDialog;
-import android.app.FragmentTransaction;
-import android.app.ListActivity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -25,16 +21,13 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ListView;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
+
 import java.lang.Override;
 import java.lang.String;
 import java.util.ArrayList;
-import java.util.zip.Inflater;
 
 //import static com.nicodangelo.pantrie.R.id.editList;
-import static com.nicodangelo.pantrie.R.layout.activity_list_main;
+
 
 public class ListMain extends ActionBarActivity
 {
