@@ -1,16 +1,25 @@
 package com.nicodangelo.item;
 
-//version 1.0
+//version 1.1
 
 public class Item
 {
-	String itemName;
-	int amountOfItem;
-	int warnLow;
-	boolean isSelected = false;
-	String type;
-	String measurement;
-	
+	private String itemName;
+    private String type;
+    private String measurement;
+    private int amountOfItem;
+	private int warnLow;
+
+    //Constructors
+    public Item(String n, int a, int l, String t, String me)
+    {
+        itemName = n;
+        amountOfItem = a;
+        warnLow = l;
+        type = t;
+        measurement = me;
+    }
+
 	public Item(String name, int amount, int low)
 	{
 		itemName = name;
@@ -35,39 +44,54 @@ public class Item
 	public Item()
 	{
 		itemName = "";
+        type = "solid";
+        measurement = "none";
 		amountOfItem = 0;
 		warnLow = 0;
 	}
+
+    //Getter Methods
 	public String getName()
 	{
 		return itemName;
 	}
+
+    public String getType()
+    {
+        return type;
+    }
+
+    public String getMeasurment()
+    {
+        return measurement;
+    }
 	
 	public int getAmount()
 	{
 		return amountOfItem;
 	}
-    	public int getLow()
+
+    public int getLow()
 	{
 		return warnLow;
 	}
-	public boolean getSelected()
-	{
-		return isSelected;
-	}
-	public String getMeasurment()
-	{
-		return measurement;
-	}
-	public String getType()
-	{
-		return type;
-	}
+
+    //Setter methods
 	public void setName(String name)
 	{
 		itemName = name;
 	}
-	
+
+    public void setType(String s)
+    {
+        type = s;
+    }
+
+    public void setMeasurement(String s)
+    {
+        measurement = s;
+    }
+
 	public void setAmount(int newAmount)
 	{
 		amountOfItem = newAmount;
@@ -78,23 +102,12 @@ public class Item
 		warnLow = low;
 	}
 
-	public void setSelected(boolean stuff)
-	{
-		isSelected = stuff;
-	}
-	public void setMeasurement(String s)
-	{
-		measurement = s;
-	}
-	public void setType(String s)
-	{
-		type = s;
-	}
-    	public String getInfo()
-    	{
+    //our version of an item like toString() ...
+    public String getInfo()
+    {
         if(amountOfItem != 0)
             return itemName + " " + amountOfItem;
         return itemName;
-    	}
+    }
 
 }
