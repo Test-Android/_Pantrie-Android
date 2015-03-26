@@ -1,0 +1,99 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             tools:context="com.nicodangelo.item.NewItemFragment"
+    >
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Create New Item"
+        android:id="@+id/titleTextView"
+        android:layout_gravity="center_horizontal|top"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"/>
+
+    <EditText
+        android:hint="@string/ItemNameString"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/itemNameEditText"
+        android:layout_below="@+id/titleTextView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="37dp"
+        android:layout_marginLeft="10dp"/>
+
+    <EditText
+        android:hint="@string/itemAmountString"
+
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/itemAmountEditText"
+        android:layout_below="@+id/itemNameEditText"
+        android:layout_alignLeft="@+id/itemNameEditText"
+        android:layout_alignStart="@+id/itemNameEditText"
+        android:layout_toStartOf="@+id/titleTextView"
+        android:layout_alignRight="@+id/questionButton"
+        android:layout_alignEnd="@+id/questionButton"/>
+
+    <EditText
+        android:hint="@string/lowItemAmountString"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:ems="10"
+        android:id="@+id/itemLowEditText"
+        android:layout_below="@+id/itemAmountEditText"
+        android:layout_alignLeft="@+id/itemAmountEditText"
+        android:layout_alignStart="@+id/itemAmountEditText"
+        android:layout_alignRight="@+id/questionButton"
+        android:layout_alignEnd="@+id/questionButton"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="?"
+        android:id="@+id/questionButton"
+        android:layout_marginLeft="41dp"
+        android:layout_marginStart="41dp"
+        android:capitalize="none"
+        android:clickable="true"
+        android:onClick="showItemHelp"
+        android:editable="false"
+        android:alpha="200"
+        android:layout_below="@+id/itemAmountEditText"
+        android:layout_alignLeft="@+id/titleTextView"
+        android:layout_alignStart="@+id/titleTextView"/>
+
+    <ExpandableListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ItemTypeListView"
+        android:layout_alignLeft="@+id/itemLowEditText"
+        android:layout_alignStart="@+id/itemLowEditText"
+        android:layout_toLeftOf="@+id/measurementListView"
+        android:layout_toStartOf="@+id/measurementListView"
+        android:layout_below="@+id/itemLowEditText"
+        android:longClickable="false"/>
+
+    <ExpandableListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/measurementListView"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@+id/questionButton"
+        android:layout_below="@+id/itemLowEditText"
+        android:layout_toRightOf="@+id/questionButton"
+        android:longClickable="false"/>
+
+</RelativeLayout>
