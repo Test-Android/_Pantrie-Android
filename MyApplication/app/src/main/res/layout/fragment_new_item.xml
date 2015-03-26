@@ -96,4 +96,13 @@
         android:layout_toRightOf="@+id/questionButton"
         android:longClickable="false"/>
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Create Item"
+        android:id="@+id/createItemButton"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"/>
+
 </RelativeLayout>
