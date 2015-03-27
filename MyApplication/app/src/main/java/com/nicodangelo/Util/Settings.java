@@ -1,6 +1,6 @@
 //@author Jake Cox
 
-package com.nicodangelo.util;
+package com.nicodangelo.Util;
 
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;

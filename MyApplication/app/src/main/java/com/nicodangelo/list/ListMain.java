@@ -1,7 +1,7 @@
 // @Author Jett Kaspar
 package com.nicodangelo.list;
 
-import com.nicodangelo.util.Settings;
+import com.nicodangelo.Util.Settings;
 import com.nicodangelo.item.ItemController;
 import com.nicodangelo.pantrie.R;
 
@@ -38,6 +38,8 @@ public class ListMain extends ActionBarActivity
     int curSize = 0;
     ListView lv;
     Boolean paused = false;
+    AlertDialog ad;
+    AlertDialog.Builder br;
 
     @Override
     public void onCreate(Bundle bundle)
@@ -82,8 +84,8 @@ public class ListMain extends ActionBarActivity
                                     @Override
                                     public void onClick(DialogInterface dialog, int which)
                                     {
-                                        AlertDialog.Builder builder = new AlertDialog.Builder(ListMain.this);
-                                        builder.setTitle(itemList.getName(position));
+                                        br = new AlertDialog.Builder(ListMain.this);
+                                        br.setTitle(itemList.getName(position));
 
                                         final EditText one = new EditText(ListMain.this);
                                         one.setHint("Set Amount");
@@ -97,8 +99,8 @@ public class ListMain extends ActionBarActivity
                                         lay.setOrientation(LinearLayout.VERTICAL);
                                         lay.addView(one);
                                         lay.addView(two);
-                                        builder.setView(lay);
-                                        builder.setPositiveButton("Ok", new DialogInterface.OnClickListener()
+                                        br.setView(lay);
+                                        br.setPositiveButton("Ok", new DialogInterface.OnClickListener()
                                         {
                                             public void onClick(DialogInterface dialog, int whichButton)
                                             {
@@ -113,13 +115,13 @@ public class ListMain extends ActionBarActivity
 
                                             }
                                         });
-                                        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                                        br.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
                                             public void onClick(DialogInterface dialog, int whichButton) {
                                                 dialog.cancel();
                                             }
                                         });
-                                        builder.create();
-                                        builder.show();
+                                        br.create();
+                                        br.show();
                                     }
                                 })
                                 .setNeutralButton("New Item", new DialogInterface.OnClickListener()
@@ -127,42 +129,72 @@ public class ListMain extends ActionBarActivity
                                     @Override
                                     public void onClick(DialogInterface dialog, int which)
                                     {
-                                        AlertDialog.Builder builder = new AlertDialog.Builder(ListMain.this);
-                                        builder.setTitle("Create New Item: All Fields Required");
+                                        br = new AlertDialog.Builder(ListMain.this);
+                                        br.setTitle("Create New Item: All Fields Required");
                                         final EditText name = new EditText(ListMain.this);
                                         name.setHint("Name of item");
                                         final EditText amount = new EditText(ListMain.this);
                                         amount.setHint("Amount of items");
-                                        final EditText setLow = new EditText(ListMain.this);
-                                        setLow.setHint("Set Low Amount");
-
 
                                         name.setInputType(InputType.TYPE_CLASS_TEXT);
                                         amount.setInputType(InputType.TYPE_CLASS_NUMBER);
-                                        setLow.setInputType(InputType.TYPE_CLASS_NUMBER);
 
                                         LinearLayout lay = new LinearLayout(ListMain.this);
                                         lay.setOrientation(LinearLayout.VERTICAL);
                                         lay.addView(name);
                                         lay.addView(amount);
-                                        lay.addView(setLow);
-                                        builder.setView(lay);
-                                        builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
-                                            public void onClick(DialogInterface dialog, int whichButton) {
+                                        br.setView(lay);
+                                        br.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                                            public void onClick(DialogInterface dialog, int whichButton)
+                                            {
                                                 itemList.addItem(name.getText().toString());
-                                                if (!TextUtils.isEmpty(amount.getText().toString()))
-                                                    itemList.setAmount(a + 1, Integer.parseInt(setLow.getText().toString()));
-                                                if (!TextUtils.isEmpty(setLow.getText().toString()))
-                                                    itemList.setAmount(a + 1, Integer.parseInt(setLow.getText().toString()));
-                                                list.add(itemList.getName(a + 1));
                                                 curSize++;
+                                                if (!TextUtils.isEmpty(amount.getText().toString()))
+                                                    itemList.setAmount(a +1, Integer.parseInt(amount.getText().toString()));
+                                                list.add(itemList.getName(a + 1));
                                                 adapter.notifyDataSetChanged();
+
+                                                ad.dismiss();
+
+                                                br = new AlertDialog.Builder(ListMain.this);
+                                                br.setTitle("Extra Info: Optional");
+                                                final EditText setLow = new EditText(ListMain.this);
+                                                setLow.setHint("Set Low Amount Warning");
+                                                final EditText type = new EditText(ListMain.this);
+                                                type.setHint("Solid, or Liquid");
+                                                final EditText measurement = new EditText(ListMain.this);
+                                                measurement.setHint("Set Measurement Type");
+
+                                                setLow.setInputType(InputType.TYPE_CLASS_NUMBER);
+                                                type.setInputType(InputType.TYPE_CLASS_TEXT);
+                                                measurement.setInputType(InputType.TYPE_CLASS_TEXT);
+
+                                                LinearLayout lay = new LinearLayout(ListMain.this);
+                                                lay.setOrientation(LinearLayout.VERTICAL);
+                                                lay.addView(setLow);
+                                                lay.addView(type);
+                                                br.setView(lay)
+                                                        .setPositiveButton("Okay", new DialogInterface.OnClickListener()
+                                                        {
+                                                            @Override
+                                                            public void onClick(DialogInterface dialog, int which)
+                                                            {
+                                                                if (!TextUtils.isEmpty(setLow.getText().toString()))
+                                                                    itemList.setLowAmount(a + 1, Integer.parseInt(setLow.getText()
+                                                                        .toString()));
+                                                                if (!TextUtils.isEmpty(type.getText().toString()))
+                                                                    itemList.setType(a + 1, type.getText().toString());
+                                                                if (!TextUtils.isEmpty(measurement.getText().toString()))
+                                                                    itemList.setMes(a + 1, measurement.getText().toString());
+
+                                                            }
+                                                        });
 
 
                                             }
                                         });
-                                        builder.create();
-                                        builder.show();
+                                        ad = br.create();
+                                        ad = br.show();
                                     }
                                 })
                                 .setNegativeButton("Cancel", new DialogInterface.OnClickListener() { @Override public void onClick(DialogInterface dialog, int which){ adapter.notifyDataSetChanged();}});
@@ -201,43 +233,74 @@ public class ListMain extends ActionBarActivity
         }
         else if(id == R.id.action_add_item)
         {
-            AlertDialog.Builder builder = new AlertDialog.Builder(ListMain.this);
-            builder.setTitle("Create New Item");
+            br = new AlertDialog.Builder(ListMain.this);
+            br.setTitle("Create New Item: All Fields Required");
             final EditText name = new EditText(ListMain.this);
-            name.setHint("Name of item (required)");
+            name.setHint("Name of item");
             final EditText amount = new EditText(ListMain.this);
-            amount.setHint("Amount of items(Not Required)");
-            final EditText setLow = new EditText(ListMain.this);
-            setLow.setHint("Set Low Amount(Not Required)");
-
+            amount.setHint("Amount of items");
 
             name.setInputType(InputType.TYPE_CLASS_TEXT);
             amount.setInputType(InputType.TYPE_CLASS_NUMBER);
-            setLow.setInputType(InputType.TYPE_CLASS_NUMBER);
 
             LinearLayout lay = new LinearLayout(ListMain.this);
             lay.setOrientation(LinearLayout.VERTICAL);
             lay.addView(name);
             lay.addView(amount);
-            lay.addView(setLow);
-            builder.setView(lay);
-            builder.setPositiveButton("Ok", new DialogInterface.OnClickListener()
-            {
+            br.setView(lay);
+            br.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int whichButton)
                 {
                     itemList.addItem(name.getText().toString());
                     if (!TextUtils.isEmpty(amount.getText().toString()))
                         itemList.setAmount(curSize, Integer.parseInt(amount.getText().toString()));
-                    if (!TextUtils.isEmpty(setLow.getText().toString()))
-                        itemList.setLowAmount(curSize, Integer.parseInt(setLow.getText().toString()));
-                    list.add(itemList.getInfo(curSize));
-                    curSize++;
+                    list.add(itemList.getName(curSize));
                     adapter.notifyDataSetChanged();
+
+                    ad.dismiss();
+
+                    br = new AlertDialog.Builder(ListMain.this);
+                    br.setTitle("Extra Info: Optional");
+                    final EditText setLow = new EditText(ListMain.this);
+                    setLow.setHint("Set Low Amount Warning");
+                    final EditText type = new EditText(ListMain.this);
+                    type.setHint("Solid, or Liquid");
+                    final EditText measurement = new EditText(ListMain.this);
+                    measurement.setHint("Set Measurement Type");
+
+                    setLow.setInputType(InputType.TYPE_CLASS_NUMBER);
+                    type.setInputType(InputType.TYPE_CLASS_TEXT);
+                    measurement.setInputType(InputType.TYPE_CLASS_TEXT);
+
+                    LinearLayout lay = new LinearLayout(ListMain.this);
+                    lay.setOrientation(LinearLayout.VERTICAL);
+                    lay.addView(setLow);
+                    lay.addView(type);
+                    lay.addView(measurement);
+                    br.setView(lay)
+                            .setPositiveButton("Okay", new DialogInterface.OnClickListener()
+                            {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which)
+                                {
+                                    if (!TextUtils.isEmpty(setLow.getText().toString()))
+                                        itemList.setLowAmount(curSize, Integer.parseInt(setLow.getText()
+                                                .toString()));
+                                    if (!TextUtils.isEmpty(type.getText().toString()))
+                                        itemList.setType(curSize, type.getText().toString());
+                                    if (!TextUtils.isEmpty(measurement.getText().toString()))
+                                        itemList.setMes(curSize, measurement.getText().toString());
+                                    curSize++;
+
+                                }
+                            });
+                    ad = br.create();
+                    ad = br.show();
 
                 }
             });
-            builder.create();
-            builder.show();
+            ad = br.create();
+            ad = br.show();
         }
 
         return super.onOptionsItemSelected(item);

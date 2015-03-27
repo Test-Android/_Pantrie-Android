@@ -1,4 +1,4 @@
-package com.nicodangelo.util;
+package com.nicodangelo.Util;
 
 import android.app.AlertDialog;
 import android.content.Intent;

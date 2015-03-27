@@ -1,4 +1,4 @@
-//@author Jett Kasper
+//@author Jett Kaspar
 
 package com.nicodangelo.list;
 
