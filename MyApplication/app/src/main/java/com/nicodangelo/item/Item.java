@@ -1,14 +1,14 @@
 package com.nicodangelo.item;
 
 //version 1.1
-
+//whole and partial? instead of solid and liquid?
 public class Item
 {
-	private String itemName;
+    private String itemName;
     private String type;
     private String measurement;
     private int amountOfItem;
-	private int warnLow;
+    private int warnLow;
 
     //Constructors
     public Item(String n, int a, int l, String t, String me)
