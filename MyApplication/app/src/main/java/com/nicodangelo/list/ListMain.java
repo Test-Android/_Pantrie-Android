@@ -24,6 +24,7 @@ import android.widget.ListView;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 import android.widget.TextView;
 =======
 >>>>>>> parent of 247c0a3... didn't like how the getinfo looked so it's gone :p
@@ -33,6 +34,9 @@ import android.widget.TextView;
 =======
 
 >>>>>>> parent of fd64c95... I dont know why but there were some major problems with the package util?
+=======
+import android.widget.TextView;
+>>>>>>> origin/master
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
