@@ -21,6 +21,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -200,14 +201,42 @@ public class ListMain extends ActionBarActivity
                                         ad = br.show();
                                     }
                                 })
-                                .setNegativeButton("Get Info", new DialogInterface.OnClickListener()
+                                .setNegativeButton("Cancel", new DialogInterface.OnClickListener()
                                 {
                                     @Override public void onClick(DialogInterface dialog, int which)
                                     {
-                                        Intent i = new Intent(ListMain.this, GetInfo.class);
-                                        i.putExtra("spot",itemList.getSpot());
-                                        startActivity(i);
-                                        adapter.notifyDataSetChanged();
+
+                                        br = new AlertDialog.Builder(ListMain.this)
+                                                .setTitle("Info");
+                                        final TextView name = new TextView(ListMain.this);
+                                        final TextView amount = new TextView(ListMain.this);
+                                        final TextView lowAmount = new TextView(ListMain.this);
+                                        final TextView type = new TextView(ListMain.this);
+                                        final TextView mes = new TextView(ListMain.this);
+
+                                        name.setText(itemList.getName(a + 1));
+                                        amount.setText("Amount: " + itemList.getAmount(a + 1));
+                                        lowAmount.setText("Low Amount: " + itemList.getLowAmount(a + 1));
+                                        type.setText("Item Type: " + itemList.getType(a + 1));
+                                        mes.setText("Measurement Type: " + itemList.getMes(a + 1));
+
+                                        LinearLayout lay = new LinearLayout(ListMain.this);
+                                        lay.setOrientation(LinearLayout.VERTICAL);
+                                        lay.addView(name);
+                                        lay.addView(amount);
+                                        lay.addView(lowAmount);
+                                        lay.addView(type);
+                                        lay.addView(mes);
+                                        br.setView(lay)
+                                                .setPositiveButton("Okay", new DialogInterface.OnClickListener() {
+                                                    @Override
+                                                    public void onClick(DialogInterface dialog, int which) {
+                                                        ad.dismiss();
+                                                    }
+                                                });
+                                        ad = br.create();
+                                        ad = br.show();
+
                                     }
                                 });
                         ab.create();
