@@ -21,14 +21,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ListView;
-<<<<<<< HEAD
-<<<<<<< HEAD
 import android.widget.TextView;
-=======
->>>>>>> parent of 247c0a3... didn't like how the getinfo looked so it's gone :p
-
-=======
->>>>>>> origin/master
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
