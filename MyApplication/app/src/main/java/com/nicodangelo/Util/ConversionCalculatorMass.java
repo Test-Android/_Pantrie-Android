@@ -1,6 +1,6 @@
 //@author Jake Cox
 
-package com.nicodangelo.Util;
+package com.nicodangelo.util;
 
 
 import android.app.AlertDialog;

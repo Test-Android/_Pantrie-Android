@@ -1,9 +1,9 @@
 // @Author Jett Kaspar
-package com.nicodangelo.list;
 
-import com.nicodangelo.Util.Settings;
+package com.nicodangelo.list;
 import com.nicodangelo.item.ItemController;
 import com.nicodangelo.pantrie.R;
+import com.nicodangelo.util.Settings;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -21,8 +21,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+<<<<<<< HEAD
 import android.widget.TextView;
 
+=======
+>>>>>>> origin/master
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
