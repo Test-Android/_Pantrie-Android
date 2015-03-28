@@ -22,6 +22,9 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.lang.Override;
 import java.lang.String;
 import java.util.ArrayList;
@@ -197,12 +200,31 @@ public class ListMain extends ActionBarActivity
                                         ad = br.show();
                                     }
                                 })
-                                .setNegativeButton("Cancel", new DialogInterface.OnClickListener() { @Override public void onClick(DialogInterface dialog, int which){ adapter.notifyDataSetChanged();}});
+                                .setNegativeButton("Get Info", new DialogInterface.OnClickListener()
+                                {
+                                    @Override public void onClick(DialogInterface dialog, int which)
+                                    {
+                                        Intent i = new Intent(ListMain.this, GetInfo.class);
+                                        i.putExtra("spot",itemList.getSpot());
+                                        startActivity(i);
+                                        adapter.notifyDataSetChanged();
+                                    }
+                                });
                         ab.create();
                         ab.show();
                     }
-                }    }
+                }
+            }
         });
+        if(getInfo())
+        {
+            for(int k = 0; k < itemList.getSpot(); k++)
+            {
+                list.add(itemList.getInfo(k));
+                adapter.notifyDataSetChanged();
+            }
+        }
+
     }
 
     @Override
@@ -217,7 +239,6 @@ public class ListMain extends ActionBarActivity
     public boolean onCreateOptionsMenu(Menu menu)
     {
         getMenuInflater().inflate(R.menu.menu_add_item, menu);
-        getMenuInflater().inflate(R.menu.menu_settings, menu);
         return true;
     }
     @Override
@@ -227,7 +248,7 @@ public class ListMain extends ActionBarActivity
         
         if(id == R.id.action_settings)
         {
-            Intent i = new Intent(this, Settings.class);
+            Intent i = new Intent(ListMain.this, Settings.class);
             startActivity(i);
             return true;
         }
@@ -254,7 +275,7 @@ public class ListMain extends ActionBarActivity
                     itemList.addItem(name.getText().toString());
                     if (!TextUtils.isEmpty(amount.getText().toString()))
                         itemList.setAmount(curSize, Integer.parseInt(amount.getText().toString()));
-                    list.add(itemList.getName(curSize));
+                    list.add(itemList.getInfo(curSize));
                     adapter.notifyDataSetChanged();
 
                     ad.dismiss();
@@ -303,5 +324,34 @@ public class ListMain extends ActionBarActivity
             ad = br.show();
         }
         return super.onOptionsItemSelected(item);
+    }
+    public boolean getInfo()
+    {
+        String state = "";
+        File s = getCacheDir();
+        try
+        {
+            FileInputStream a = new FileInputStream(s);
+            int g = 0;
+            while((g = a.read()) != -1)
+                state = state + ((char)g);
+            a.close();
+            if(state.equals("true"))
+            {
+                FileOutputStream fi = new FileOutputStream(s);
+                fi.write("false".getBytes());
+                fi.close();
+                return true;
+            }
+            else
+                return false;
+
+        }
+        catch(Exception e)
+        {
+            e.printStackTrace();
+        }
+        return false;
+
     }
 }

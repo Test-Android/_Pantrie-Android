@@ -32,7 +32,7 @@
             android:label="@string/title_activity_forgot_password" >
         </activity>
         <activity
-            android:name="com.nicodangelo.util.Settings"
+            android:name="com.nicodangelo.Util.Settings"
             android:label="@string/title_activity_settings" >
         </activity>
         <activity
@@ -40,14 +40,17 @@
             android:label="@string/title_activity_list_adapter" >
         </activity>
         <activity
-            android:name="com.nicodangelo.util.ConversionCalculatorMass"
+            android:name="com.nicodangelo.Util.ConversionCalculatorMass"
             android:label="@string/title_activity_conversion_calculator_mass" >
         </activity>
         <activity
-            android:name="com.nicodangelo.util.ConversionCalculatorVolume"
+            android:name="com.nicodangelo.Util.ConversionCalculatorVolume"
             android:label="@string/title_activity_conversion_calculator_volume" >
         </activity>
-
+        <activity
+            android:name="com.nicodangelo.list.GetInfo"
+            android:label="@string/title_activity_get_info" >
+        </activity>
     </application>
 
 </manifest>

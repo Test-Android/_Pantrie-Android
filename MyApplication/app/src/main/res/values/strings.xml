@@ -30,4 +30,5 @@
     <string name="ItemNameString">Item Name</string>
     <string name="itemAmountString">Item Amount</string>
     <string name="lowItemAmountString">Low Amount</string>
+    <string name="title_activity_get_info">GetInfo</string>
 </resources>

@@ -27,6 +27,8 @@ public class ItemController {
         items.get(i).setAmount(spot);
     }
 
+    public int getAmount(int spot) { return items.get(spot).getAmount(); }
+
     public String getName(int spot) {
         return "Item Name: " + items.get(spot).getName();
     }
@@ -34,6 +36,8 @@ public class ItemController {
     public void setLowAmount(int spot, int low) {
         items.get(spot).setLow(low);
     }
+
+    public int getLowAmount(int spot) { return items.get(spot).getLow();}
 
     public int getSpot() {
         return curSpot;
@@ -43,10 +47,14 @@ public class ItemController {
         items.get(spot).setType(type);
     }
 
+    public String getType(int spot) { return items.get(spot).getType(); }
+
     public void setMes(int spot, String mes)
     {
         items.get(spot).setMeasurement(mes);
     }
+
+    public String getMes(int spot) { return items.get(spot).getMeasurment(); }
 
     public String getInfo(int spot)
     {
