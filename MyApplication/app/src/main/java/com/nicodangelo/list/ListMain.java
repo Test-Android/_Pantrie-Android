@@ -1,9 +1,9 @@
 // @Author Jett Kaspar
-
 package com.nicodangelo.list;
+
+import com.nicodangelo.Util.Settings;
 import com.nicodangelo.item.ItemController;
 import com.nicodangelo.pantrie.R;
-import com.nicodangelo.util.Settings;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -21,7 +21,22 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
 import android.widget.TextView;
+=======
+>>>>>>> parent of 247c0a3... didn't like how the getinfo looked so it's gone :p
+
+=======
+>>>>>>> origin/master
+=======
+
+>>>>>>> parent of fd64c95... I dont know why but there were some major problems with the package util?
+=======
+import android.widget.TextView;
+>>>>>>> origin/master
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
