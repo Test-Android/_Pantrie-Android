@@ -22,7 +22,11 @@
         <activity
             android:name=".NewLogIn"
             android:label="@string/title_activity_new_log_in" >
+<<<<<<< HEAD
 
+=======
+        </activity>
+>>>>>>> parent of a92bcb6... I COPIED EVERYTHING!!!!!!!!!
         <activity
             android:name=".list.ListMain"
             android:label="ListMain" >
