@@ -11,6 +11,5 @@
         app:showAsAction="always"/>
     <item android:id="@+id/length"
         android:title="Length"
-        android:icon="@mipmap/ic_launcher"
         app:showAsAction="always"/>
 </menu>
