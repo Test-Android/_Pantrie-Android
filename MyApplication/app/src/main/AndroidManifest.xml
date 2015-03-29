@@ -22,9 +22,9 @@
         <activity
             android:name=".NewLogIn"
             android:label="@string/title_activity_new_log_in" >
-        
+
         <activity
-            android:name="com.nicodangelo.list.ListMain"
+            android:name=".list.ListMain"
             android:label="ListMain" >
         </activity>
         <activity
@@ -32,19 +32,19 @@
             android:label="@string/title_activity_forgot_password" >
         </activity>
         <activity
-            android:name="com.nicodangelo.util.Settings"
+            android:name=".util.Settings"
             android:label="@string/title_activity_settings" >
         </activity>
         <activity
-            android:name="com.nicodangelo.list.ListAdapter"
+            android:name=".list.ListAdapter"
             android:label="@string/title_activity_list_adapter" >
         </activity>
         <activity
-            android:name="com.nicodangelo.util.ConversionCalculatorMass"
+            android:name=".util.ConversionCalculatorMass"
             android:label="@string/title_activity_conversion_calculator_mass" >
         </activity>
         <activity
-            android:name="com.nicodangelo.util.ConversionCalculatorVolume"
+            android:name=".util.ConversionCalculatorVolume"
             android:label="@string/title_activity_conversion_calculator_volume" >
         </activity>
 
