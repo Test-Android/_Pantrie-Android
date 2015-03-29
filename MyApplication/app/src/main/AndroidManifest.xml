@@ -48,8 +48,13 @@
         <activity
             android:name=".NewLogIn"
             android:label="@string/title_activity_new_log_in" >
+<<<<<<< HEAD
 
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
+        </activity>
+>>>>>>> origin/master
 
             <activity
                 android:name="com.nicodangelo.list.ListMain"
@@ -59,6 +64,11 @@
             <activity
             @@ -32,19 +32,19 @@
 =======
+<<<<<<< HEAD
+=======
+        
+>>>>>>> parent of 33d298f... had to rename util because it was showing it as Util, and added a </activity> thing
+>>>>>>> origin/master
         <activity
             android:name=".list.ListMain"
             android:label="ListMain" >
