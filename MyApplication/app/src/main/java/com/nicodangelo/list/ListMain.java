@@ -1,10 +1,9 @@
 // @Author Jett Kaspar
 package com.nicodangelo.list;
 
-import com.nicodangelo.Util.Settings;
-import com.nicodangelo.item.ItemController;
 import com.nicodangelo.pantrie.R;
-
+import com.nicodangelo.util.Settings;
+import com.nicodangelo.item.ItemController;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -21,22 +20,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ListView;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 import android.widget.TextView;
-=======
->>>>>>> parent of 247c0a3... didn't like how the getinfo looked so it's gone :p
-
-=======
->>>>>>> origin/master
-=======
-
->>>>>>> parent of fd64c95... I dont know why but there were some major problems with the package util?
-=======
-import android.widget.TextView;
->>>>>>> origin/master
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -219,9 +203,37 @@ public class ListMain extends ActionBarActivity
                                 {
                                     @Override public void onClick(DialogInterface dialog, int which)
                                     {
-                                        Intent i = new Intent(ListMain.this, GetInfo.class);
-                                        i.putExtra("spot",itemList.getSpot());
-                                        startActivity(i);
+                                        br = new AlertDialog.Builder(ListMain.this)
+                                                .setTitle("Info");
+                                        final TextView name = new TextView(ListMain.this);
+                                        final TextView amount = new TextView(ListMain.this);
+                                        final TextView lowAmount = new TextView(ListMain.this);
+                                        final TextView type = new TextView(ListMain.this);
+                                        final TextView mes = new TextView(ListMain.this);
+
+                                        name.setText(itemList.getName(a + 1));
+                                        amount.setText("Amount: " + itemList.getAmount(a + 1));
+                                        lowAmount.setText("Low Amount: " + itemList.getLowAmount(a + 1));
+                                        type.setText("Item Type: " + itemList.getType(a + 1));
+                                        mes.setText("Measurement Type: " + itemList.getMes(a + 1));
+
+                                        LinearLayout lay = new LinearLayout(ListMain.this);
+                                        lay.setOrientation(LinearLayout.VERTICAL);
+                                        lay.addView(name);
+                                        lay.addView(amount);
+                                        lay.addView(lowAmount);
+                                        lay.addView(type);
+                                        lay.addView(mes);
+                                        br.setView(lay)
+                                                .setPositiveButton("Okay", new DialogInterface.OnClickListener() {
+                                                    @Override
+                                                    public void onClick(DialogInterface dialog, int which) {
+                                                        ad.dismiss();
+                                                    }
+                                                });
+                                        ad = br.create();
+                                        ad = br.show();
+
                                         adapter.notifyDataSetChanged();
                                     }
                                 });

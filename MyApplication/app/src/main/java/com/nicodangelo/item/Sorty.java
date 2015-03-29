@@ -5,17 +5,17 @@ import java.util.ArrayList;
 public class Sorty
 {
     public static void sortString(ArrayList<String> s, int size)
-    {
+    {/*
         String[] sort = new String[size];
         for(int k = 0; k < size; k++)
         {
             sort[k] = s.get(k);
-        }
+        }*/
 
         long start = System.nanoTime();
         for (int k = s.size() - 1; k >= 1; k--)
         {
-            String  currentMax = sort[0];
+            String  currentMax = s.get(0);
             int currentMaxIndex = 0;
 
             for (int j = 1; j <= k; j++)
@@ -106,7 +106,6 @@ public class Sorty
     }
     public static ArrayList<Integer> selectionSort(int[] sort, int start, int end)
     {
-
         for (int k = sort.length - 1; k >= 1; k--)
         {
             int  currentMax = sort[0];
