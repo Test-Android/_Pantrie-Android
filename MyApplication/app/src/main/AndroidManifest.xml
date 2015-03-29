@@ -22,8 +22,12 @@
         <activity
             android:name=".NewLogIn"
             android:label="@string/title_activity_new_log_in" >
+<<<<<<< HEAD
         </activity>
 
+=======
+        
+>>>>>>> parent of 33d298f... had to rename util because it was showing it as Util, and added a </activity> thing
         <activity
             android:name=".list.ListMain"
             android:label="ListMain" >
