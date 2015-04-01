@@ -3,15 +3,15 @@
     <!-- These settings headers are only used on tablets. -->
 
     <header
-        android:fragment="com.nicodangelo.pantrie.util.Settings$GeneralPreferenceFragment"
+        android:fragment="com.nicodangelo.util.Settings$GeneralPreferenceFragment"
         android:title="@string/pref_header_general"/>
 
     <header
-        android:fragment="com.nicodangelo.pantrie.util.Settings$NotificationPreferenceFragment"
+        android:fragment="com.nicodangelo.util.Settings$NotificationPreferenceFragment"
         android:title="@string/pref_header_notifications"/>
 
     <header
-        android:fragment="com.nicodangelo.pantrie.util.Settings$DataSyncPreferenceFragment"
+        android:fragment="com.nicodangelo.util.Settings$DataSyncPreferenceFragment"
         android:title="@string/pref_header_data_sync"/>
 
 </preference-headers>

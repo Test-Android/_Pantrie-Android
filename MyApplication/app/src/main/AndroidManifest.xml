@@ -50,6 +50,7 @@
             android:label="@string/title_activity_new_log_in" >
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 =======
@@ -73,8 +74,11 @@
 =======
         </activity>
 >>>>>>> parent of a92bcb6... I COPIED EVERYTHING!!!!!!!!!
+=======
+        
+>>>>>>> parent of 1088ea1... I have to commit this torevert...
         <activity
-            android:name=".list.ListMain"
+            android:name="com.nicodangelo.list.ListMain"
             android:label="ListMain" >
         </activity>
         <activity
@@ -84,22 +88,34 @@
         </activity>
         <activity
             android:name="com.nicodangelo.util.Settings"
+<<<<<<< HEAD
             android:name=".util.Settings"
+=======
+>>>>>>> parent of 1088ea1... I have to commit this torevert...
             android:label="@string/title_activity_settings" >
         </activity>
         <activity
             android:name="com.nicodangelo.list.ListAdapter"
+<<<<<<< HEAD
             android:name=".list.ListAdapter"
+=======
+>>>>>>> parent of 1088ea1... I have to commit this torevert...
             android:label="@string/title_activity_list_adapter" >
         </activity>
         <activity
             android:name="com.nicodangelo.util.ConversionCalculatorMass"
+<<<<<<< HEAD
             android:name=".util.ConversionCalculatorMass"
+=======
+>>>>>>> parent of 1088ea1... I have to commit this torevert...
             android:label="@string/title_activity_conversion_calculator_mass" >
         </activity>
         <activity
             android:name="com.nicodangelo.util.ConversionCalculatorVolume"
+<<<<<<< HEAD
             android:name=".util.ConversionCalculatorVolume"
+=======
+>>>>>>> parent of 1088ea1... I have to commit this torevert...
             android:label="@string/title_activity_conversion_calculator_volume" >
         </activity>
 

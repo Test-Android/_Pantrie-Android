@@ -5,13 +5,17 @@ package com.nicodangelo.pantrie;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.nicodangelo.pantrie.list.ListMain;
+import com.nicodangelo.list.ListMain;
 import com.parse.ParseUser;
 import com.parse.RequestPasswordResetCallback;
+
+import java.text.ParseException;
 
 
 public class ForgotPassword extends ActionBarActivity
